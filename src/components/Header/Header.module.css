@@ -33,6 +33,32 @@
   transition: all 0.5s;
 }
 
+.menuNav {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 10rem;
+}
+
+.menuNav > * {
+  cursor: pointer;
+}
+
+.menu button {
+  background: none;
+  border: none;
+}
+
 .menu ul {
-  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+}
+
+.menu ul a:link {
+  transition: transform 0.5s;
+}
+
+.menu ul a:hover {
+  color: var(--primary-color-dark);
+  transform: translate(2px);
 }

@@ -19,21 +19,21 @@ const Carousel = () => {
 
   const updateIndex = () => {};
 
-  //   useEffect(
-  //     function () {
-  //       const updateIndex = setInterval(() => {
-  //         if (activeIndex < items.length - 1) {
-  //           setActiveIndex(activeIndex + 1);
-  //           console.log('rusza sie', activeIndex);
-  //         } else {
-  //           setActiveIndex(0);
-  //         }
-  //       }, 7000);
+  useEffect(
+    function () {
+      const updateIndex = setInterval(() => {
+        if (activeIndex < items.length - 1) {
+          setActiveIndex(activeIndex + 1);
+          console.log('rusza sie', activeIndex);
+        } else {
+          setActiveIndex(0);
+        }
+      }, 7000);
 
-  //       return () => clearInterval(updateIndex);
-  //     },
-  //     [activeIndex]
-  //   );
+      return () => clearInterval(updateIndex);
+    },
+    [activeIndex]
+  );
 
   return (
     <div className={styles.carousel} onClick={updateIndex}>

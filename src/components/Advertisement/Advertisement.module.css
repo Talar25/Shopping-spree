@@ -1,0 +1,42 @@
+.advertisment {
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+
+  opacity: 0.85;
+}
+
+.image {
+  height: 100rem;
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.text {
+  position: absolute;
+  font-size: 3.5rem;
+  bottom: 20%;
+
+  color: var(--primary-color-light);
+  text-align: center;
+  padding-bottom: 3.5rem;
+  border-bottom: 2px solid var(--primary-color-light);
+  cursor: pointer;
+}
+
+.text button {
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}

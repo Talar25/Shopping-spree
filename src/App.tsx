@@ -26,24 +26,7 @@ function App() {
         ></Route>
         <Route path='/men-trousers' element={<h1>Men trousers</h1>}></Route>
       </Route>
-      <Route path='/children' element={<h1>Children</h1>}>
-        <Route
-          path='/children-tshirts'
-          element={<h1>Children tshirts</h1>}
-        ></Route>
-        <Route
-          path='/children-jackets'
-          element={<h1>Children jackets</h1>}
-        ></Route>
-        <Route
-          path='/children-sweatshirts'
-          element={<h1>Children sweatshirts</h1>}
-        ></Route>
-        <Route
-          path='/children-trousers'
-          element={<h1>Children trousers</h1>}
-        ></Route>
-      </Route>
+
       <Route path='/product/:id' element={<h1>Product</h1>}></Route>
       <Route path='/cart' element={<h1>Shopping cart</h1>}></Route>
       <Route path='*' element={<PageNotFound />} />
