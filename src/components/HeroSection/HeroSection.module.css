@@ -1,0 +1,22 @@
+.carousel {
+  overflow: hidden;
+  width: 100%;
+  height: calc(100vh - 9rem);
+}
+
+.inner {
+  transition: transform 3s;
+  white-space: nowrap;
+
+  height: 100%;
+  width: 100%;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.carouselItem {
+  height: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
