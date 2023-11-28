@@ -10,11 +10,11 @@ const Advertisement = () => {
   const navigate = useNavigate();
 
   const navigateToMen = () => {
-    navigate('/men-jackets');
+    navigate('men/jackets');
   };
 
   const navigateToWomen = () => {
-    navigate('/women-jackets');
+    navigate('women/jackets');
   };
 
   return (
