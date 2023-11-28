@@ -54,11 +54,19 @@
   gap: 1.2em;
 }
 
-.menu ul a:link {
+.menu li {
+  list-style: none;
   transition: transform 0.5s;
 }
 
-.menu ul a:hover {
+.menu li:hover {
   color: var(--primary-color-dark);
   transform: translate(2px);
+}
+
+.clothes {
+  margin-bottom: 7rem;
+}
+
+.miscellaneous {
 }

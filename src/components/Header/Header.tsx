@@ -51,23 +51,52 @@ const Menu = ({
           Men
         </button>
       </div>
-      <ul>
+      <ul className={styles.clothes}>
+        <h5>Clothes</h5>
         {select === 'women' && (
           <>
-            <Link to='/women-jackets'>Jackets</Link>
-            <Link to='/women-tshirts'>T-shirts</Link>
-            <Link to='/women-sweatshirts'>Sweatshirts</Link>
-            <Link to='/women-trousers'>Trousers</Link>
+            <li>
+              <Link to='women/jackets'>Jackets</Link>
+            </li>
+            <li>
+              <Link to='women/tshirts'>T-shirts</Link>
+            </li>
+            <li>
+              <Link to='women/sweatshirts'>Sweatshirts</Link>
+            </li>
+            <li>
+              <Link to='women/trousers'>Trousers</Link>
+            </li>
           </>
         )}
         {select === 'men' && (
           <>
-            <Link to='/men-jackets'>Jackets</Link>
-            <Link to='/men-tshirts'>T-shirts</Link>
-            <Link to='/men-sweatshirts'>Sweatshirts</Link>
-            <Link to='/men-trousers'>Trousers</Link>
+            <li>
+              <Link to='men/jackets'>Jackets</Link>
+            </li>
+            <li>
+              <Link to='men/tshirts'>T-shirts</Link>
+            </li>
+            <li>
+              <Link to='men/sweatshirts'>Sweatshirts</Link>
+            </li>
+            <li>
+              <Link to='men/trousers'>Trousers</Link>
+            </li>
           </>
         )}
+      </ul>
+      <ul className={styles.miscellaneous}>
+        <h5>About us</h5>
+        <li>
+          <Link to='about'>About our mission</Link>
+        </li>
+        <li>
+          <Link to='careers'>Work with us</Link>
+        </li>
+        <li>
+          <Link to='stores'>Our stores</Link>
+        </li>
       </ul>
     </section>
   );
