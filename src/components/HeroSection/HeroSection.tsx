@@ -24,7 +24,6 @@ const Carousel = () => {
       const updateIndex = setInterval(() => {
         if (activeIndex < items.length - 1) {
           setActiveIndex(activeIndex + 1);
-          console.log('rusza sie', activeIndex);
         } else {
           setActiveIndex(0);
         }
