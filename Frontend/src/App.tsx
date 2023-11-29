@@ -3,8 +3,21 @@ import './global_styles/index.css';
 import './global_styles/normalize.css';
 import PageNotFound from './pages/PageNotFound/PageNotFound';
 import Homepage from './pages/Homepage/Homepage';
+import { useEffect, useState } from 'react';
+import productServie from './services/products';
+import { Product } from './types';
 
 function App() {
+  const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      const products = await productServie.getAll();
+      setProducts(products);
+    };
+    fetchProducts();
+  }, []);
+
   return (
     <Routes>
       <Route index element={<Homepage />}></Route>

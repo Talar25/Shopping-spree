@@ -6,6 +6,10 @@ const getProducts = (): Product[] => {
   return products;
 };
 
+const getLength = (): number => {
+  return products.length;
+};
+
 const getOneProduct = (id: string): Product | undefined => {
   const product = products.find((product: { id: string }) => product.id === id);
   return product;
@@ -24,4 +28,5 @@ export default {
   getOneProduct,
   getProducts,
   addProduct,
+  getLength,
 };
