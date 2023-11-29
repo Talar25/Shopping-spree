@@ -10,7 +10,9 @@ const toNewProduct = (object: unknown): NewProduct => {
     'type' in object &&
     'gender' in object &&
     'description' in object &&
-    'price' in object
+    'price' in object &&
+    'color' in object &&
+    'size' in object
   ) {
     const newProduct: NewProduct = {
       name: parseName(object.name),
@@ -18,6 +20,8 @@ const toNewProduct = (object: unknown): NewProduct => {
       gender: parseGender(object.gender),
       description: parseName(object.description),
       price: parseName(object.price),
+      color: [],
+      size: [],
     };
 
     return newProduct;

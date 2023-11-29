@@ -27,6 +27,8 @@ export enum Color {
   BLUE = 'blue',
   YELLOW = 'yellow',
   RED = 'red',
+  GREY = 'grey',
+  BROWN = 'brown',
 }
 
 export interface Product {
@@ -36,6 +38,8 @@ export interface Product {
   gender: Gender;
   description: string;
   price: string;
+  size: Size[];
+  color: Color[];
 }
 
 export type NewProduct = Omit<Product, 'id'>;
