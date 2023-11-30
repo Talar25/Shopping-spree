@@ -16,17 +16,17 @@ const Footer = () => {
             </Link>
           </li>
           <li>
-            <Link to='/women/jackets' relative='path'>
+            <Link to='/women/jacket' relative='path'>
               Jackets
             </Link>
           </li>
           <li>
-            <Link to='/women/tshirts' relative='path'>
+            <Link to='/women/tshirt' relative='path'>
               Tshirts
             </Link>
           </li>
           <li>
-            <Link to='/women/sweatshirts' relative='path'>
+            <Link to='/women/sweatshirt' relative='path'>
               Sweatshirts
             </Link>
           </li>
@@ -44,17 +44,17 @@ const Footer = () => {
             </Link>
           </li>
           <li>
-            <Link to='/men/jackets' relative='path'>
+            <Link to='/men/jacket' relative='path'>
               Jackets
             </Link>
           </li>
           <li>
-            <Link to='/men/tshirts' relative='path'>
+            <Link to='/men/tshirt' relative='path'>
               Tshirts
             </Link>
           </li>
           <li>
-            <Link to='/men/sweatshirts' relative='path'>
+            <Link to='/men/sweatshirt' relative='path'>
               Sweatshirts
             </Link>
           </li>

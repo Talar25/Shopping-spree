@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import productService from '../services/products';
 import { Product } from '../types';
+import { AppThunk } from '../stores';
 
 const initialState: Product[] = [];
 
@@ -16,16 +17,14 @@ const productSlice = createSlice({
 
 export const { setProducts } = productSlice.actions;
 
-export const initializeProducts = () => {
-  return async (
-    dispatch: (arg0: {
-      payload: Product[];
-      type: 'products/setProducts';
-    }) => void
-  ) => {
+export const initializeProducts = (): AppThunk => async (dispatch) => {
+  try {
     const products = await productService.getAll();
     dispatch(setProducts(products));
-  };
+  } catch (error) {
+    // Handle errors if needed
+    console.error('Error initializing products:', error);
+  }
 };
 
 export default productSlice.reducer;

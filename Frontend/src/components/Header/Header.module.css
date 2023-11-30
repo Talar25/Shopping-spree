@@ -3,7 +3,7 @@
 .header {
   position: sticky;
   color: var(--primary-color-light);
-  width: 100vw;
+  /* width: 100vw; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -45,7 +45,7 @@
 .menuNav {
   display: flex;
   gap: 2rem;
-  margin-bottom: 10rem;
+  margin-bottom: 4rem;
 }
 
 .menuNav > * {
@@ -61,6 +61,7 @@
   display: flex;
   flex-direction: column;
   gap: 1.2em;
+  margin-left: 2rem;
 }
 
 .menu li {
