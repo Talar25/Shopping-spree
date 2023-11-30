@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import productService from '../services/products';
 import { Product } from '../types';
-import { AppThunk } from '../stores';
+import { AppThunk } from '../store';
 
 const initialState: Product[] = [];
 

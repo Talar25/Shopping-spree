@@ -7,15 +7,15 @@ import searchReducer from './reducers/searchReducer';
 const store = configureStore({
   reducer: {
     products: productReducer,
-    filteredProducts: filterReducer,
+    filter: filterReducer,
     notification: notificationReducer,
     searchTerm: searchReducer,
   },
 });
 
-store.subscribe(() => {
-  console.log(store.getState());
-});
+// store.subscribe(() => {
+//   console.log(store.getState());
+// });
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

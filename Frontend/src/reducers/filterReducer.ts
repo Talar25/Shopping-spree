@@ -1,17 +1,51 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { Product } from '../types';
+import { FilterTypes } from '../types';
 
-const initialState: Product[] = [];
+const initialState: FilterTypes = {
+  name: null,
+  gender: null,
+  type: null,
+  price: null,
+  size: null,
+  color: null,
+};
 
 const filterSlice = createSlice({
   name: 'filter',
   initialState,
   reducers: {
-    setFilteredProducts(_state, action) {
-      return action.payload;
+    setToInitial() {
+      return initialState;
+    },
+    setTypeFilter(state, action) {
+      return { ...state, type: action.payload };
+    },
+
+    setGenderFilter(state, action) {
+      return { ...state, gender: action.payload };
+    },
+    setNameFilter(state, action) {
+      return { ...state, name: action.payload };
+    },
+    setPriceFilter(state, action) {
+      return { ...state, price: action.payload };
+    },
+    setSizeFilter(state, action) {
+      return { ...state, size: action.payload };
+    },
+    setColorFilter(state, action) {
+      return { ...state, color: action.payload };
     },
   },
 });
 
-export const { setFilteredProducts } = filterSlice.actions;
+export const {
+  setToInitial,
+  setGenderFilter,
+  setColorFilter,
+  setNameFilter,
+  setPriceFilter,
+  setSizeFilter,
+  setTypeFilter,
+} = filterSlice.actions;
 export default filterSlice.reducer;

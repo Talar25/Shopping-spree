@@ -1,9 +1,9 @@
-import styles from './WomenHeading.module.css';
+import styles from './ManHeading.module.css';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import Image1 from '../../assets/Landscape_two_girls_laying.jpg';
-import Image1Placeholder from '../../assets/Landscape_two_girls_laying_PLACEHOLDER.jpg';
+import Image1 from '../../assets/Landscape_four_men.jpg';
+import Image1Placeholder from '../../assets/Landscape_four_men_PLACEHOLDER.jpg';
 
-const WomenHeading = () => {
+const ManHeading = () => {
   return (
     <section className={styles.section}>
       <div className={styles.wrapper}>
@@ -17,8 +17,8 @@ const WomenHeading = () => {
             effect='black-and-white'
           />
           <div className={styles.text}>
-            <h2>Empower Your Style</h2>
-            <p> Discover a Collection as Unique as You Are.</p>
+            <h2>Refined Classics for the Modern Gentleman</h2>
+            <p>Elevate Your Wardrobe with Timeless Sophistication</p>
           </div>
         </div>
       </div>
@@ -26,4 +26,4 @@ const WomenHeading = () => {
   );
 };
 
-export default WomenHeading;
+export default ManHeading;

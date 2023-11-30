@@ -37,6 +37,7 @@ export enum Color {
 }
 
 export interface Product {
+  includes(arg0: Color): unknown;
   id: string;
   name: string;
   type: ClothType;
@@ -45,6 +46,15 @@ export interface Product {
   price: string;
   size: Size[];
   color: Color[];
+}
+
+export interface FilterTypes {
+  name: string | null;
+  gender: Gender | null;
+  type: ClothType | null;
+  price: number | null;
+  size: Size[] | null;
+  color: Color[] | null;
 }
 
 export type NewProduct = Omit<Product, 'id'>;

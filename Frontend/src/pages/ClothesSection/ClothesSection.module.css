@@ -1,0 +1,31 @@
+.wrapper {
+  margin: 5rem auto;
+  max-width: 100rem;
+  text-align: center;
+}
+
+.wrapper h1 {
+  display: inline-block;
+  margin: 0 auto 5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--secondary-color-light);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+  row-gap: 5rem;
+}
+
+.text {
+  margin-top: 0.7rem;
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.text h3 {
+  text-transform: uppercase;
+  font-weight: lighter;
+  margin-bottom: 0.4rem;
+}
