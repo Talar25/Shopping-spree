@@ -11,67 +11,87 @@ const Footer = () => {
       <div className={styles.wrapper}>
         <ul className={styles.column}>
           <li>
-            <Link to='women'>Women</Link>
+            <Link to='/women' relative='path'>
+              Women
+            </Link>
           </li>
           <li>
-            <Link to='/women/jackets'>Jackets</Link>
+            <Link to='/women/jackets' relative='path'>
+              Jackets
+            </Link>
           </li>
           <li>
-            <Link to='/women/tshirts'>Tshirts</Link>
+            <Link to='/women/tshirts' relative='path'>
+              Tshirts
+            </Link>
           </li>
           <li>
-            <Link to='/women/sweatshirts'>Sweatshirts</Link>
+            <Link to='/women/sweatshirts' relative='path'>
+              Sweatshirts
+            </Link>
           </li>
           <li>
-            <Link to='/women/trousers'>Trousers</Link>
-          </li>
-        </ul>
-
-        <ul className={styles.column}>
-          <li>
-            <Link to='men'>Men</Link>
-          </li>
-          <li>
-            <Link to='/men/jackets'>Jackets</Link>
-          </li>
-          <li>
-            <Link to='/men/tshirts'>Tshirts</Link>
-          </li>
-          <li>
-            <Link to='/men/sweatshirts'>Sweatshirts</Link>
-          </li>
-          <li>
-            <Link to='/men/trousers'>Trousers</Link>
+            <Link to='/women/trousers' relative='path'>
+              Trousers
+            </Link>
           </li>
         </ul>
 
         <ul className={styles.column}>
           <li>
-            <Link to='about'>About us</Link>
+            <Link to='/men' relative='path'>
+              Men
+            </Link>
           </li>
           <li>
-            <Link to='about'>About our mission</Link>
+            <Link to='/men/jackets' relative='path'>
+              Jackets
+            </Link>
           </li>
           <li>
-            <Link to='careers'>Work with us</Link>
+            <Link to='/men/tshirts' relative='path'>
+              Tshirts
+            </Link>
           </li>
           <li>
-            <Link to='stores'>Our stores</Link>
+            <Link to='/men/sweatshirts' relative='path'>
+              Sweatshirts
+            </Link>
+          </li>
+          <li>
+            <Link to='/men/trousers' relative='path'>
+              Trousers
+            </Link>
           </li>
         </ul>
 
         <ul className={styles.column}>
           <li>
-            <Link to='help'>Help</Link>
+            <Link to='/about'>About us</Link>
           </li>
           <li>
-            <Link to='contact'>Contact</Link>
+            <Link to='/about'>About our mission</Link>
           </li>
           <li>
-            <Link to='cart'>Track your order</Link>
+            <Link to='/careers'>Work with us</Link>
           </li>
           <li>
-            <Link to='cart'>Returns</Link>
+            <Link to='/stores'>Our stores</Link>
+          </li>
+        </ul>
+
+        <ul className={styles.column}>
+          <li>
+            <Link to='/help'>Help</Link>
+          </li>
+          <li>
+            <Link to='/contact'>Contact</Link>
+          </li>
+          <li>
+            <Link to='/cart'>Track your order</Link>
+          </li>
+          <li>
+            <Link to='/cart'>Returns</Link>
           </li>
         </ul>
       </div>
