@@ -11,6 +11,11 @@ import { Product, FilterTypes } from '../../types';
 import { useEffect, useState, useCallback } from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
+//mui icons
+import ViewArrayIcon from '@mui/icons-material/ViewArray';
+import ViewColumnIcon from '@mui/icons-material/ViewColumn';
+import ViewModuleIcon from '@mui/icons-material/ViewModule';
+import RectangleIcon from '@mui/icons-material/Rectangle';
 //Images imports
 import IMG_WOMAN_JACKET from '../../assets/Woman_jacket.jpg';
 import IMG_WOMAN_JACKET_PLACEHOLDER from '../../assets/Woman_jacket_PLACEHOLDER.jpg';
@@ -28,12 +33,12 @@ import IMG_MAN_TSHIRT from '../../assets/Man_tshirt.jpg';
 import IMG_MAN_TSHIRT_PLACEHOLDER from '../../assets/Man_tshirt_PLACEHOLDER.jpg';
 import IMG_MAN_TROUSERS from '../../assets/Man_trousers.jpg';
 import IMG_MAN_TROUSERS_PLACEHOLDER from '../../assets/Man_trousers_PLACEHOLDER.jpg';
+import { setGrid } from '../../reducers/gridReducer';
 
 const getPhotos = (
   filter: FilterTypes,
   type: string
 ): { image: string; imagePlaceholder: string } => {
-  console.log(filter);
   if (filter.gender === 'male') {
     switch (type) {
       case 'jacket':
@@ -126,6 +131,7 @@ const checkFilters = (products: Product[], filter: FilterTypes): Product[] => {
 
 const ClothesSection = ({ genderType }: { genderType: string }) => {
   const dispatch = useDispatch();
+  const grid = useSelector((state: RootState) => state.grid);
   const params = useParams();
   const paramValue = params && Object.values(params);
   const gender = genderType === 'men' ? 'male' : 'female';
@@ -147,6 +153,32 @@ const ClothesSection = ({ genderType }: { genderType: string }) => {
     <section className={styles.section}>
       <div className={styles.wrapper}>
         <h1>{`${heading} for ${genderType === 'men' ? 'Men' : 'Women'}`}</h1>
+        <div className={styles.gridButtons}>
+          <ViewArrayIcon
+            onClick={() => dispatch(setGrid(2))}
+            sx={{
+              fontSize: '25px',
+              color: `${grid === 2 ? 'black' : 'white'}`,
+              stroke: 'grey',
+            }}
+          />
+          <ViewColumnIcon
+            onClick={() => dispatch(setGrid(3))}
+            sx={{
+              fontSize: '25px',
+              color: `${grid === 3 ? 'black' : 'white'}`,
+              stroke: 'grey',
+            }}
+          />
+          <ViewModuleIcon
+            onClick={() => dispatch(setGrid(4))}
+            sx={{
+              fontSize: '25px',
+              color: `${grid === 4 ? 'black' : 'white'}`,
+              stroke: 'grey',
+            }}
+          />
+        </div>
         <Clothes />
       </div>
     </section>
@@ -159,6 +191,7 @@ const Clothes = () => {
   const [filteredProducts, setFilterProducts] = useState<Product[]>([]);
   const products = useSelector((state: RootState) => state.products);
   const filter = useSelector((state: RootState) => state.filter);
+  const grid = useSelector((state: RootState) => state.grid);
 
   const filterProducts = useCallback(() => {
     const result = checkFilters(products, filter);
@@ -170,36 +203,38 @@ const Clothes = () => {
   }, [filterProducts]);
 
   return (
-    <div className={styles.grid}>
+    <div
+      className={styles.grid}
+      style={{ gridTemplateColumns: `repeat(${grid}, 1fr)` }}
+    >
       {filteredProducts.map((product) => (
-        <Card
-          title={product.name}
-          price={product.price}
-          key={product.id}
-          type={product.type}
-        />
+        <Card key={product.id} id={product.id} />
       ))}
     </div>
   );
 };
 
-const Card = ({
-  title,
-  price,
-  type,
-}: {
-  title: string;
-  price: string;
-  type: string;
-}) => {
+const Card = ({ id }: { id: string }) => {
+  const [show, setShow] = useState(false);
   const filter = useSelector((state: RootState) => state.filter);
-
+  const products = useSelector((state: RootState) => state.products);
+  const {
+    name: title,
+    price,
+    type,
+    color,
+    size,
+  } = products.find((product) => product.id === id);
   const { image, imagePlaceholder } = getPhotos(filter, type);
+  const grid = useSelector((state: RootState) => state.grid);
 
   return (
     <div className={styles.card}>
       <div className={styles.card_image}>
         <LazyLoadImage
+          onMouseMove={() => setShow(true)}
+          onMouseOver={() => setShow(true)}
+          onMouseOut={() => setTimeout(() => setShow(false), 1000)}
           width='100%'
           height='auto'
           src={image}
@@ -207,6 +242,65 @@ const Card = ({
           placeholderSrc={imagePlaceholder}
           effect='black-and-white'
         />
+        {show && (
+          <div className={styles.hiddenInfo}>
+            <div
+              className={styles.hiddenInfo_wrapper}
+              style={{
+                fontSize: `${
+                  grid === 2 ? '20px' : grid === 3 ? '15px' : '10px'
+                }`,
+              }}
+            >
+              <div className={styles.hiddenInfo_colors}>
+                <p>Colors</p>
+                <ul>
+                  {color.map((c) => (
+                    <li>
+                      <RectangleIcon
+                        style={{
+                          color: `${c}`,
+                          fontSize: `${
+                            grid === 2 ? '25px' : grid === 3 ? '20px' : '15px'
+                          }`,
+                        }}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <p>Sizes</p>
+                <ul className={styles.hiddenInfo_sizes}>
+                  {size.map((s) => (
+                    <li
+                      className={styles.hiddenInfo_size}
+                      style={{
+                        fontSize: `${
+                          grid === 2 ? '25px' : grid === 3 ? '20px' : '15px'
+                        }`,
+                      }}
+                    >
+                      {s}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <button
+              style={{
+                padding:
+                  grid === 2
+                    ? '0.8rem 1.8rem'
+                    : grid === 3
+                    ? '0.6rem 1.6rem'
+                    : '0.rem 0.8rem',
+              }}
+            >
+              Add to cart
+            </button>
+          </div>
+        )}
       </div>
       <div className={styles.text}>
         <h3>{title}</h3>
@@ -215,3 +309,5 @@ const Card = ({
     </div>
   );
 };
+
+// transform: `translateY(${show ? '-50' : '0'}%)`

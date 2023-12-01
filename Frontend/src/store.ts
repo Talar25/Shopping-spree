@@ -3,6 +3,7 @@ import productReducer from './reducers/productReducer';
 import filterReducer from './reducers/filterReducer';
 import notificationReducer from './reducers/notificationReducer';
 import searchReducer from './reducers/searchReducer';
+import gridReducer from './reducers/gridReducer';
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     filter: filterReducer,
     notification: notificationReducer,
     searchTerm: searchReducer,
+    grid: gridReducer,
   },
 });
 

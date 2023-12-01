@@ -10,25 +10,27 @@ const Advertisement = () => {
   const navigate = useNavigate();
 
   const navigateToMen = () => {
-    navigate('men/jackets');
+    navigate('/men/jacket');
   };
 
   const navigateToWomen = () => {
-    navigate('women/jackets');
+    navigate('/women/jacket');
   };
 
   return (
     <section className={styles.advertisement}>
       <div className={styles.wrapper}>
-        <div className={styles.image} onClick={navigateToMen}>
-          <LazyLoadImage
-            width='100%'
-            height='auto'
-            src={Image1}
-            alt='ad-img'
-            placeholderSrc={Image1Placeholder}
-            effect='blur'
-          />
+        <div className={styles.card} onClick={navigateToMen}>
+          <div className={styles.image}>
+            <LazyLoadImage
+              width='100%'
+              height='auto'
+              src={Image1}
+              alt='ad-img'
+              placeholderSrc={Image1Placeholder}
+              effect='blur'
+            />
+          </div>
           <div className={styles.text}>
             <h4>Jackets for true men</h4>
             <button>Check it out!</button>
