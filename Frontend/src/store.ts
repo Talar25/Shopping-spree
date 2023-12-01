@@ -4,6 +4,8 @@ import filterReducer from './reducers/filterReducer';
 import notificationReducer from './reducers/notificationReducer';
 import searchReducer from './reducers/searchReducer';
 import gridReducer from './reducers/gridReducer';
+import cartReducer from './reducers/cartReducer';
+cartReducer;
 
 const store = configureStore({
   reducer: {
@@ -12,6 +14,7 @@ const store = configureStore({
     notification: notificationReducer,
     searchTerm: searchReducer,
     grid: gridReducer,
+    cart: cartReducer,
   },
 });
 

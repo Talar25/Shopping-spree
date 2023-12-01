@@ -256,7 +256,7 @@ const Card = ({ id }: { id: string }) => {
                 <p>Colors</p>
                 <ul>
                   {color.map((c) => (
-                    <li>
+                    <li key={c}>
                       <RectangleIcon
                         style={{
                           color: `${c}`,
@@ -274,6 +274,7 @@ const Card = ({ id }: { id: string }) => {
                 <ul className={styles.hiddenInfo_sizes}>
                   {size.map((s) => (
                     <li
+                      key={s}
                       className={styles.hiddenInfo_size}
                       style={{
                         fontSize: `${

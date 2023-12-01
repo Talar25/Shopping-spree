@@ -9,6 +9,10 @@
   opacity: 0.85;
 }
 
+.card {
+  flex: 1;
+}
+
 .image {
   height: 100rem;
   flex: 1;
@@ -23,7 +27,8 @@
 .text {
   position: absolute;
   font-size: 3.5rem;
-  bottom: 20%;
+  bottom: 40%;
+  left: 10%;
 
   color: var(--primary-color-light);
   text-align: center;

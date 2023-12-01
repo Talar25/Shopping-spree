@@ -37,7 +37,6 @@ export enum Color {
 }
 
 export interface Product {
-  includes(arg0: Color): unknown;
   id: string;
   name: string;
   type: ClothType;
@@ -46,6 +45,17 @@ export interface Product {
   price: string;
   size: Size[];
   color: Color[];
+}
+
+export interface CartProduct {
+  id: string;
+  name: string;
+  type: ClothType;
+  gender: Gender;
+  description: string;
+  price: string;
+  size: Size;
+  color: Color;
 }
 
 export interface FilterTypes {

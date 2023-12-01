@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { FilterTypes } from '../types';
 
 const initialState: number = 2;
 

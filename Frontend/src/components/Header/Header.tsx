@@ -4,10 +4,13 @@ import styles from './Header.module.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { RootState } from '../../store';
 
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [scroll, setScroll] = useState(false);
+  const cart = useSelector((state: RootState) => state.cart);
 
   useEffect(() => {
     const changeHeader = () => {
@@ -40,7 +43,7 @@ const Header = () => {
       <Link to='/'>
         <h1 className={styles.heading}>Shopping Spree</h1>
       </Link>
-      <Link to='/cart'>Shopping bag</Link>
+      <Link to='/cart'>Shopping bag ({cart.length})</Link>
     </nav>
   );
 };
