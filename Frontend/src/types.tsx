@@ -54,8 +54,8 @@ export interface CartProduct {
   gender: Gender;
   description: string;
   price: string;
-  size: Size;
-  color: Color;
+  size: string;
+  color: string;
 }
 
 export interface FilterTypes {

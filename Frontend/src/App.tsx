@@ -10,6 +10,7 @@ import ClothesSection from './pages/ClothesSection/ClothesSection';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { initializeProducts } from './reducers/productReducer';
+import ProductPage from './pages/ProductPage/ProductPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -60,7 +61,7 @@ function App() {
         ></Route>
       </Route>
 
-      <Route path='product/:id' element={<h1>Product</h1>}></Route>
+      <Route path='product/:id' element={<ProductPage />}></Route>
       <Route path='cart' element={<Cart />}></Route>
       <Route path='*' element={<PageNotFound />} />
     </Routes>
