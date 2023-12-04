@@ -1,6 +1,7 @@
 .productSection {
   margin-top: -15rem;
   border-top: 15rem solid black;
+  height: 100vh;
 }
 
 .productSection_wrapper {

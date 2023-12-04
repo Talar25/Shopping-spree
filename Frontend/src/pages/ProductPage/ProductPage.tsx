@@ -15,12 +15,14 @@ import { capitalizeFirstLetter, getPhotos } from '../../utils';
 import { CarouselItemInterface, CartProduct } from '../../types';
 import { addProductToCart } from '../../reducers/cartReducer';
 import { ProductCarousel } from './ProductCarousel';
+import { ProductDescription } from '../../components/ProductDescription/ProductDescription';
 
 const ProductPage = () => {
   return (
     <>
       <Header />
       <Product />
+      <ProductDescription />
       <Footer />
     </>
   );
