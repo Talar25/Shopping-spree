@@ -3,7 +3,7 @@ import styles from './ProductPage.module.css';
 //importing compontents
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 import RectangleIcon from '@mui/icons-material/Rectangle';
 //importing hooks
 import { useParams } from 'react-router';
@@ -12,8 +12,9 @@ import { useEffect, useState } from 'react';
 //importing types
 import { RootState } from '../../store';
 import { capitalizeFirstLetter, getPhotos } from '../../utils';
-import { CartProduct } from '../../types';
+import { CarouselItemInterface, CartProduct } from '../../types';
 import { addProductToCart } from '../../reducers/cartReducer';
+import { ProductCarousel } from './ProductCarousel';
 
 const ProductPage = () => {
   return (
@@ -44,6 +45,14 @@ const Product = () => {
     (product) => product.id === id
   );
 
+  //we dont have images in object and we need to create array for carousel
+  const carouselImages: CarouselItemInterface[] = [
+    { src: image1, placeholder: image2 },
+    { src: image1, placeholder: image2 },
+    { src: image1, placeholder: image2 },
+    { src: image1, placeholder: image2 },
+  ];
+
   useEffect(() => {
     if (product) {
       const { image, imagePlaceholder } = getPhotos(product, product.type);
@@ -66,22 +75,16 @@ const Product = () => {
     <section className={styles.productSection}>
       <div className={styles.productSection_wrapper}>
         <div className={styles.productSection_image}>
-          <LazyLoadImage
+          {/* <LazyLoadImage
             width='100%'
             height='auto'
             src={image1}
             alt='hero-img'
             placeholderSrc={image2}
             effect='black-and-white'
-          />
-          <LazyLoadImage
-            width='100%'
-            height='auto'
-            src={image1}
-            alt='hero-img'
-            placeholderSrc={image2}
-            effect='black-and-white'
-          />
+          /> */}
+
+          <ProductCarousel items={carouselImages} />
         </div>
         <div className={styles.productSection_text}>
           <h2>{product?.name}</h2>

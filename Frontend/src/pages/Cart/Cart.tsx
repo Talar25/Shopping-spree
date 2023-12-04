@@ -7,7 +7,7 @@ const Cart = () => {
   return (
     <>
       <Header />
-      {/*  */}
+
       <Footer />
     </>
   );
