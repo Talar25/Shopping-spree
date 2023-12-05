@@ -56,6 +56,7 @@ export interface CartProduct {
   price: string;
   size: string;
   color: string;
+  number: number;
 }
 
 export interface FilterTypes {

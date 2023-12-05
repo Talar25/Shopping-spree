@@ -1,4 +1,4 @@
-import styles from './ClothesSection.module.css';
+import styles from './Card.module.css';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { LazyLoadImage } from 'react-lazy-load-image-component';

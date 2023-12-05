@@ -1,5 +1,7 @@
-import { useParams } from 'react-router';
 import styles from './ClothesSection.module.css';
+//hooks
+import { useParams } from 'react-router';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../store';
 import {
@@ -22,9 +24,6 @@ const ClothesSection = ({ genderType }: { genderType: string }) => {
   const params = useParams();
   const paramValue = params && Object.values(params);
   const gender = genderType === 'men' ? 'male' : 'female';
-  dispatch(setToInitial());
-  dispatch(setGenderFilter(gender));
-  if (paramValue[0]) dispatch(setTypeFilter(paramValue[0]));
 
   const heading = !paramValue[0]
     ? `All clothes`
@@ -35,6 +34,12 @@ const ClothesSection = ({ genderType }: { genderType: string }) => {
     : paramValue[0] === 'sweatshirt'
     ? 'Sweatshirts'
     : 'Trousers';
+
+  useEffect(() => {
+    dispatch(setToInitial());
+    dispatch(setGenderFilter(gender));
+    if (paramValue[0]) dispatch(setTypeFilter(paramValue[0]));
+  }, [dispatch, gender, paramValue]);
 
   return (
     <section className={styles.section}>

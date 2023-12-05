@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { Product } from '../../types';
 import { useEffect, useState, useCallback } from 'react';
-import { Card } from './Card';
+import { Card } from '../../components/Card/Card';
 import { checkFilters } from '../../utils';
 
 export const Clothes = () => {

@@ -5,7 +5,7 @@ import PageNotFound from './pages/PageNotFound/PageNotFound';
 import Homepage from './pages/Homepage/Homepage';
 import Women from './pages/Women/Women';
 import Men from './pages/Men/Men';
-import Cart from './pages/Cart/Cart';
+import CartPage from './pages/CartPage/CartPage';
 import ClothesSection from './pages/ClothesSection/ClothesSection';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     dispatch(initializeProducts());
-  }, []);
+  }, [dispatch]);
 
   return (
     <Routes>
@@ -62,7 +62,7 @@ function App() {
       </Route>
 
       <Route path='product/:id' element={<ProductPage />}></Route>
-      <Route path='cart' element={<Cart />}></Route>
+      <Route path='cart' element={<CartPage />}></Route>
       <Route path='*' element={<PageNotFound />} />
     </Routes>
   );

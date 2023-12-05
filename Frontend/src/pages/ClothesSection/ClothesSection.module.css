@@ -17,20 +17,3 @@
   column-gap: 2rem;
   row-gap: 5rem;
 }
-
-.text {
-  margin-top: 0.7rem;
-  font-size: 1.2rem;
-  font-weight: 400;
-}
-
-.text h3 {
-  text-transform: uppercase;
-  font-weight: lighter;
-  margin-bottom: 0.4rem;
-}
-
-.card_image {
-  overflow: hidden;
-  position: relative;
-}

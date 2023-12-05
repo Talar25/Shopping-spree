@@ -9,7 +9,7 @@
   justify-content: center;
 
   max-width: 120rem;
-  margin: 0 auto;
+  margin: 5rem auto;
 }
 
 .productSection_text {
@@ -139,4 +139,24 @@
   align-items: center;
   gap: 5px;
   list-style: none;
+}
+
+.recommended_wrapper {
+  max-width: 120rem;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--primary-color);
+  padding-bottom: 3rem;
+}
+
+.recommended_heading {
+  margin-bottom: 3rem;
+  font-size: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.recommended_gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
 }

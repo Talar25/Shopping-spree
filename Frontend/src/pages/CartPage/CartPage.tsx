@@ -1,15 +1,12 @@
-import './Women.module.css';
-//importing compontents
+import './CartPage.module.css';
+//import compontents
 import Header from '../../components/Header/Header';
-import WomenHeading from '../../components/WomenHeading/WomenHeading';
 import Footer from '../../components/Footer/Footer';
-import { Outlet } from 'react-router';
-
 //import hooks
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const Women = () => {
+const Cart = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -18,11 +15,10 @@ const Women = () => {
   return (
     <>
       <Header />
-      <WomenHeading />
-      <Outlet />
+
       <Footer />
     </>
   );
 };
 
-export default Women;
+export default Cart;
