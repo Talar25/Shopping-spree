@@ -1,0 +1,138 @@
+.cartSection {
+  margin-top: -15rem;
+  border-top: 15rem solid black;
+  min-height: 100vh;
+}
+
+.productsHalf h2 {
+  font-size: 2.3rem;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--primary-color-dark);
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--primary-color-dark);
+  margin-bottom: 2rem;
+}
+
+.cartProducts {
+  list-style: none;
+}
+
+.wrapper {
+  max-width: 100rem;
+  margin: 5rem auto;
+
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.smallCard {
+  display: flex;
+  height: 100%;
+  padding: 2rem;
+  margin-bottom: 2rem;
+
+  color: var(--primary-color-darker);
+}
+
+.image {
+  max-width: 150px;
+  display: block;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.cardText {
+  width: 100%;
+  height: 100%;
+}
+
+.cardTop,
+.cardBottom {
+  display: flex;
+}
+
+.cardTop {
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  justify-content: space-between;
+}
+
+.cardBottom {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+
+.heading,
+.addButtons {
+  margin-right: auto;
+}
+
+.heading {
+  margin-bottom: 2rem;
+}
+
+.color {
+  font-size: 1.3rem;
+  margin-bottom: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.addButtons {
+  display: flex;
+
+  align-items: center;
+  gap: 2rem;
+}
+
+.addAmount {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.changeSize span {
+  margin-right: 0.5rem;
+}
+
+.purchaseHalf {
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 2rem;
+  min-width: 32rem;
+
+  font-size: 1.4rem;
+  color: var(--primary-color-darker);
+}
+
+.purchaseHalf h2 {
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+}
+
+.productsSummary_row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.productsSummary_row.productsSummary_total {
+  margin: 1rem 0 2rem;
+  font-weight: 800;
+}
+
+.productsSummary_btn {
+  padding: 1rem 2rem;
+  border: none;
+  cursor: pointer;
+
+  background-color: var(--secondary-color);
+  color: var(--primary-color-light);
+
+  transition: 0.5s all;
+}
+
+.productsSummary_btn:hover,
+.productsSummary_btn:active {
+  background-color: var(--secondary-color-lighter);
+}

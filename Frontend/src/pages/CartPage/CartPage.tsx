@@ -1,12 +1,12 @@
-import './CartPage.module.css';
 //import compontents
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 //import hooks
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Cart } from './Cart';
 
-const Cart = () => {
+const CartPage = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -15,10 +15,10 @@ const Cart = () => {
   return (
     <>
       <Header />
-
+      <Cart />
       <Footer />
     </>
   );
 };
 
-export default Cart;
+export default CartPage;
