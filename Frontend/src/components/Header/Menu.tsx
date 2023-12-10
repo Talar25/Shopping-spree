@@ -1,6 +1,7 @@
 import CloseIcon from '@mui/icons-material/Close';
 import styles from './Header.module.css';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export const Menu = ({
   open,
@@ -9,6 +10,16 @@ export const Menu = ({
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  useEffect(() => {
+    const close = (e) => {
+      if (e.keyCode === 27) {
+        setOpen(false);
+      }
+    };
+    window.addEventListener('keydown', close);
+    return () => window.removeEventListener('keydown', close);
+  }, [setOpen]);
+
   return (
     <section
       className={styles.menu}

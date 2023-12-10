@@ -3,11 +3,12 @@ import styles from './Header.module.css';
 //import components
 import CloseIcon from '@mui/icons-material/Close';
 import { PurchaseSummary } from '../../pages/CartPage/PurchaseSummary';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 //import hooks
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { RootState } from '../../store';
 import { ProductsGallery } from './ProductsGallery';
+import { useEffect } from 'react';
+import { EmpyCart } from './EmpyCart';
 
 export const CartModal = ({
   open,
@@ -19,6 +20,16 @@ export const CartModal = ({
   const cart = useSelector((state: RootState) => state.cart);
   const cartLength = cart.reduce((acc, cur) => acc + cur.number, 0);
   const cost = cart.reduce((acc, cur) => acc + cur.number * cur.price, 0);
+
+  useEffect(() => {
+    const close = (e) => {
+      if (e.keyCode === 27) {
+        setOpen(false);
+      }
+    };
+    window.addEventListener('keydown', close);
+    return () => window.removeEventListener('keydown', close);
+  }, [setOpen]);
   return (
     <section
       className={styles.cartModal}
@@ -26,7 +37,10 @@ export const CartModal = ({
     >
       <div className={styles.cartModal_Nav}>
         <h2>Shopping cart ({cartLength})</h2>
-        <CloseIcon sx={{ fontSize: 25 }} onClick={() => setOpen(false)} />
+        <CloseIcon
+          sx={{ fontSize: 25, cursor: 'pointer' }}
+          onClick={() => setOpen(false)}
+        />
       </div>
       {cartLength > 0 ? (
         <>
@@ -42,17 +56,5 @@ export const CartModal = ({
         <EmpyCart />
       )}
     </section>
-  );
-};
-
-const EmpyCart = () => {
-  return (
-    <div className={styles.emptycart}>
-      <div>
-        <ShoppingCartIcon sx={{ fontSize: '25px', marginBottom: '1rem' }} />
-        <h4>YOUR SHOPPING CART IS EMPTY</h4>
-        <p>Your cart is still empty, discover everything we’ve got for you</p>
-      </div>
-    </div>
   );
 };

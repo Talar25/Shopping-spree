@@ -25,6 +25,13 @@
   letter-spacing: 2px;
 }
 
+.bagopen_btn {
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 .menu,
 .cartModal {
   position: fixed;
@@ -125,7 +132,7 @@
   height: 100%;
 }
 
-::-webkit-scrollbar {
+.cartModal ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
