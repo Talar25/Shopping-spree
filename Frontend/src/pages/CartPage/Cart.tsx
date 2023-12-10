@@ -2,6 +2,7 @@ import styles from './CartPage.module.css';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../store';
 import { SmallCard } from './SmallCard';
+import { PurchaseSummary } from './PurchaseSummary';
 
 export const Cart = () => {
   const cart = useSelector((state: RootState) => state.cart);
@@ -23,29 +24,13 @@ export const Cart = () => {
                   id={c.id}
                   color={c.color}
                   size={c.size}
+                  type=''
                 />
               ))}
             </ul>
           </div>
         </div>
-        <div className={styles.purchaseHalf}>
-          <h2>Order summary</h2>
-          <div className={styles.productsSummary_row}>
-            <p>{numberOfProducts} Products</p>
-            <p>{cost}.00 EURO</p>
-          </div>
-          <div className={styles.productsSummary_row}>
-            <p>Delievery charges</p>
-            <p>4.00 EURO</p>
-          </div>
-          <div
-            className={`${styles.productsSummary_row} ${styles.productsSummary_total}`}
-          >
-            <p>Total</p>
-            <p>{cost + Number(4)}.00 EURO</p>
-          </div>
-          <button className={styles.productsSummary_btn}>Continue</button>
-        </div>
+        <PurchaseSummary numberOfProducts={numberOfProducts} cost={cost} />
       </div>
     </section>
   );

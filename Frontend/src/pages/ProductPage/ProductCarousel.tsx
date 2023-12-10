@@ -4,7 +4,6 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import CircleIcon from '@mui/icons-material/Circle';
 import { useState } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import { CarouselItemInterface } from '../../types';
 
 export function ProductCarousel({ items }: { items: CarouselItemInterface[] }) {

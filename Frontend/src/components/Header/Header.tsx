@@ -6,9 +6,11 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { RootState } from '../../store';
 import { Menu } from './Menu';
+import { CartModal } from './CartModal';
 
 const Header = () => {
-  const [open, setOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
+  const [openCart, setOpenCart] = useState(false);
   const [scroll, setScroll] = useState(false);
   const cart = useSelector((state: RootState) => state.cart);
   const cartLength = cart.reduce((acc, cur) => acc + cur.number, 0);
@@ -22,6 +24,16 @@ const Header = () => {
 
     window.addEventListener('scroll', changeHeader);
   }, []);
+
+  const handleOpenMenu = () => {
+    setOpenMenu(true);
+    setOpenCart(false);
+  };
+
+  const handleOpenCart = () => {
+    setOpenCart(true);
+    setOpenMenu(false);
+  };
 
   return (
     <nav
@@ -38,13 +50,19 @@ const Header = () => {
           : {}
       }
     >
-      <MenuIcon sx={{ fontSize: 25 }} onClick={() => setOpen(true)} />
-      <Menu setOpen={setOpen} open={open} />
+      <MenuIcon
+        sx={{ fontSize: 25, cursor: 'pointer' }}
+        onClick={handleOpenMenu}
+      />
+      <Menu setOpen={setOpenMenu} open={openMenu} />
+      <CartModal setOpen={setOpenCart} open={openCart} />
 
       <Link to='/'>
         <h1 className={styles.heading}>Shopping Spree</h1>
       </Link>
-      <Link to='/cart'>Shopping bag ({cartLength})</Link>
+      <button className={styles.bagopen_btn} onClick={handleOpenCart}>
+        Shopping bag ({cartLength})
+      </button>
     </nav>
   );
 };

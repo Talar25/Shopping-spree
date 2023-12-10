@@ -19,10 +19,12 @@ export const SmallCard = ({
   id,
   color,
   size,
+  type = '',
 }: {
   id: string;
   color: string;
   size: string;
+  type: string;
 }) => {
   const dispatch = useDispatch();
   const [image1, setImage1] = useState('');
@@ -63,7 +65,11 @@ export const SmallCard = ({
     <li>
       {!product && 'Loading'}
       {product && (
-        <div className={styles.smallCard}>
+        <div
+          className={`${
+            type === 'small' ? styles.smallCard_CartNav : styles.smallCard
+          }`}
+        >
           <Link to={`/product/${product.id}`}>
             <div className={styles.image}>
               <LazyLoadImage
@@ -82,7 +88,7 @@ export const SmallCard = ({
                 <div className={styles.heading}>{product?.name}</div>
               </Link>
               <div className={styles.price}>
-                {product?.price * product.number}.00 EURO
+                {product?.price * product.number}.00€
               </div>
             </div>
             <div className={styles.color}>

@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem 5rem;
+  padding: 0 5rem;
   height: 9rem;
 
   font-size: 1.5rem;
@@ -25,24 +25,27 @@
   letter-spacing: 2px;
 }
 
-.menu {
+.menu,
+.cartModal {
   position: fixed;
   height: 100vh;
   top: 0;
-  left: 0;
-  width: 40rem;
   background-color: var(--primary-color-light);
   z-index: 99;
   box-shadow: 5px 0px 20px 3px rgba(0, 0, 0, 0.249);
   color: var(--primary-color-darker);
 
-  padding: 3rem 5rem;
   font-size: 1.5rem;
-
+  width: 40rem;
   transition: all 0.5s;
 }
 
-.menuNav {
+.menu {
+  padding: 3rem 5rem;
+  left: 0;
+}
+
+.menu .menuNav {
   display: flex;
   gap: 2rem;
   margin-bottom: 4rem;
@@ -50,11 +53,6 @@
 
 .menuNav > * {
   cursor: pointer;
-}
-
-.menu button {
-  background: none;
-  border: none;
 }
 
 .menu ul {
@@ -80,4 +78,54 @@
 
 .miscellaneous {
   margin-top: 15rem;
+}
+
+.cartModal {
+  right: 0;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.cartModal_Nav {
+  display: flex;
+  padding: 3rem 3rem 1rem;
+  justify-content: space-between;
+}
+
+.cartModal_Nav h2 {
+  margin-bottom: 3rem;
+}
+
+.emptycart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.emptycart h4 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  color: var(--primary-color-darker);
+}
+
+.emptycart p {
+  width: 60%;
+  margin: 0 auto;
+  color: var(--primary-color-dark);
+}
+
+.cartModal_gallery {
+  list-style: none;
+  padding: 0 3rem;
+  margin-bottom: auto;
+  overflow-y: auto;
+  height: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
 }

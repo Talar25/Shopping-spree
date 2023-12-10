@@ -35,6 +35,11 @@
   color: var(--primary-color-darker);
 }
 
+.smallCard_CartNav {
+  display: flex;
+  margin-bottom: 4rem;
+}
+
 .image {
   max-width: 150px;
   display: block;
@@ -57,9 +62,20 @@
   justify-content: space-between;
 }
 
-.cardBottom {
-  margin-top: 2rem;
+.smallCard_CartNav .cardTop {
   font-size: 1.2rem;
+  text-transform: uppercase;
+  justify-content: space-between;
+}
+
+.cardBottom {
+  margin-top: 5rem;
+  font-size: 1.2rem;
+}
+
+.smallCard_CartNav .cardBottom {
+  margin-top: 3rem;
+  font-size: 1.1rem;
 }
 
 .heading,
@@ -77,6 +93,10 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
+}
+
+.smallCard_CartNav .color {
+  font-size: 0.9rem;
 }
 
 .addButtons {
