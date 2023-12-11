@@ -71,3 +71,13 @@ a:visited {
   color: inherit;
 }
 
+button:focus,
+a:focus {
+  outline: none;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--secondary-color);
+  color: var(--secondary-color-darker);
+
+  transition: 0.2s all;
+}
+

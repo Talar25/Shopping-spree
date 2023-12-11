@@ -7,7 +7,7 @@ import { PurchaseSummary } from '../../pages/CartPage/PurchaseSummary';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import { RootState } from '../../store';
 import { ProductsGallery } from './ProductsGallery';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { EmpyCart } from './EmpyCart';
 
 export const CartModal = ({
@@ -17,6 +17,7 @@ export const CartModal = ({
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  const cartRef = useRef(null);
   const cart = useSelector((state: RootState) => state.cart);
   const cartLength = cart.reduce((acc, cur) => acc + cur.number, 0);
   const cost = cart.reduce((acc, cur) => acc + cur.number * cur.price, 0);
@@ -27,11 +28,23 @@ export const CartModal = ({
         setOpen(false);
       }
     };
+
+    const closeOnClickOutside = (e) => {
+      if (cartRef.current && !cartRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    };
+
     window.addEventListener('keydown', close);
-    return () => window.removeEventListener('keydown', close);
+    document.addEventListener('mousedown', closeOnClickOutside);
+    return () => {
+      window.removeEventListener('keydown', close);
+      document.removeEventListener('mousedown', closeOnClickOutside);
+    };
   }, [setOpen]);
   return (
     <section
+      ref={cartRef}
       className={styles.cartModal}
       style={open ? { right: '0' } : { right: '-40rem' }}
     >

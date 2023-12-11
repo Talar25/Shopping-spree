@@ -1,8 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { CartProduct } from '../types';
+
+const initialState: CartProduct | null = null;
 
 const notificationSlice = createSlice({
   name: 'notification',
-  initialState: null,
+  initialState,
   reducers: {
     changeNotification(_state, action) {
       return action.payload;
@@ -12,10 +15,10 @@ const notificationSlice = createSlice({
 
 export const { changeNotification } = notificationSlice.actions;
 
-export const setNotification = (content: string, time: number) => {
+export const setNotification = (content: CartProduct, time: number) => {
   return async (
     dispatch: (arg0: {
-      payload: { content: string; time: number };
+      payload: { content: CartProduct; time: number };
       type: 'notification/changeNotification';
     }) => void
   ) => {

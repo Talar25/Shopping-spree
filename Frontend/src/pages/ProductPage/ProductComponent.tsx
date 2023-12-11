@@ -8,12 +8,12 @@ import { capitalizeFirstLetter, getPhotos } from '../../utils';
 import { CarouselItemInterface, CartProduct } from '../../types';
 import { addProductToCart } from '../../reducers/cartReducer';
 import { ProductCarousel } from './ProductCarousel';
+import { setNotification } from '../../reducers/notificationReducer';
 
 export const ProductComponent = () => {
   //dispatch
   const dispatch = useDispatch();
-  //state for popup window
-  const [isShowed, setIsShowed] = useState<boolean>(false);
+
   //state for images
   const [image1, setImage1] = useState('');
   const [image2, setImage2] = useState('');
@@ -56,7 +56,7 @@ export const ProductComponent = () => {
         number: 1,
       };
       dispatch(addProductToCart(object));
-      setIsShowed(true);
+      dispatch(setNotification(object, 10));
     }
   };
 

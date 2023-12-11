@@ -25,7 +25,8 @@
   letter-spacing: 2px;
 }
 
-.bagopen_btn {
+.cartOpen_btn {
+  position: relative;
   border: none;
   background: none;
   color: inherit;
@@ -135,4 +136,39 @@
 .cartModal ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
+}
+
+.popup {
+  position: absolute;
+  top: 10rem;
+  right: 3rem;
+  padding: 1rem 2rem;
+  color: var(--secondary-color-lighter);
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
+
+  box-shadow: 1px 1px 20px 10px rgba(0, 0, 0, 0.162);
+  z-index: 99;
+  background-color: var(--primary-color-light);
+}
+
+.popup li {
+  list-style: none;
+}
+
+.popup_heading {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.popup_btn {
+  padding: 1rem 2rem;
+  border: none;
+  cursor: pointer;
+
+  background-color: var(--secondary-color);
+  color: var(--primary-color-light);
+
+  transition: 0.5s all;
 }

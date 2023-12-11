@@ -1,7 +1,7 @@
 import CloseIcon from '@mui/icons-material/Close';
 import styles from './Header.module.css';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 export const Menu = ({
   open,
@@ -10,18 +10,32 @@ export const Menu = ({
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  const menuRef = useRef(null);
+
   useEffect(() => {
-    const close = (e) => {
+    const closeOnEscape = (e) => {
       if (e.keyCode === 27) {
         setOpen(false);
       }
     };
-    window.addEventListener('keydown', close);
-    return () => window.removeEventListener('keydown', close);
-  }, [setOpen]);
 
+    const closeOnClickOutside = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener('keydown', closeOnEscape);
+    document.addEventListener('mousedown', closeOnClickOutside);
+
+    return () => {
+      window.removeEventListener('keydown', closeOnEscape);
+      document.removeEventListener('mousedown', closeOnClickOutside);
+    };
+  }, [setOpen]);
   return (
     <section
+      ref={menuRef}
       className={styles.menu}
       style={open ? { left: '0' } : { left: '-40rem' }}
     >
