@@ -21,7 +21,7 @@ export const Clothes = () => {
     filterProducts();
   }, [filterProducts]);
 
-  return (
+  return filteredProducts.length > 0 ? (
     <div
       className={styles.grid}
       style={{ gridTemplateColumns: `repeat(${grid}, 1fr)` }}
@@ -30,5 +30,9 @@ export const Clothes = () => {
         <Card key={product.id} id={product.id} />
       ))}
     </div>
+  ) : (
+    <p style={{ textAlign: 'center', marginTop: '10rem' }}>
+      There are no products that accept all your wishes.
+    </p>
   );
 };

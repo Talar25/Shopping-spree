@@ -79,41 +79,21 @@ export const checkFilters = (
   products: Product[],
   filter: FilterTypes
 ): Product[] => {
-  let filteredProducts: Product[] = products;
-  if (filter.gender) {
-    filteredProducts = products.filter(
-      (product) => product.gender === filter.gender
-    );
-  }
-  if (filter.type) {
-    filteredProducts = filteredProducts.filter(
-      (product) => product.type === filter.type
-    );
-  }
+  return products.filter((product) => {
+    const genderMatch = !filter.gender || product.gender === filter.gender;
+    const typeMatch = !filter.type || product.type === filter.type;
+    const priceMatch = !filter.price || +product.price <= filter.price;
+    const colorMatch =
+      !filter.color ||
+      filter.color.length === 0 ||
+      filter.color.every((c) => product.color.includes(c));
+    const sizeMatch =
+      !filter.size ||
+      filter.size.length === 0 ||
+      filter.size.every((s) => product.size.includes(s));
 
-  if (filter.price) {
-    filteredProducts = products.filter(
-      (product) => +product.price <= filter.price
-    );
-  }
-
-  if (filter.color && filter.color.length > 0) {
-    for (let i = 0; i < filter.color.length; i++) {
-      filteredProducts = products.filter((product) =>
-        product.color.includes(filter.color[i])
-      );
-    }
-  }
-
-  if (filter.size && filter.size.length > 0) {
-    for (let i = 0; i < filter.size.length; i++) {
-      filteredProducts = products.filter((product) =>
-        product.size.includes(filter.size[i])
-      );
-    }
-  }
-
-  return filteredProducts;
+    return genderMatch && typeMatch && priceMatch && colorMatch && sizeMatch;
+  });
 };
 
 export const capitalizeFirstLetter = (string: string) => {

@@ -37,10 +37,31 @@ const filterSlice = createSlice({
       return { ...state, color: action.payload };
     },
     addColorFilter(state, action) {
-      if (!state.color) return { ...state, color: action.payload };
-      else {
+      if (!state.color) return { ...state, color: [action.payload] };
+
+      if (!state.color.includes(action.payload)) {
         const arr = [...state.color, action.payload];
         return { ...state, color: arr };
+      }
+    },
+    removeColorFilter(state, action) {
+      if (state.color && state.color?.includes(action.payload)) {
+        const newArr = state.color.filter((color) => color !== action.payload);
+        return { ...state, color: newArr };
+      }
+    },
+    addSizeFilter(state, action) {
+      if (!state.size) return { ...state, size: [action.payload] };
+
+      if (!state.size.includes(action.payload)) {
+        const arr = [...state.size, action.payload];
+        return { ...state, size: arr };
+      }
+    },
+    removeSizeFilter(state, action) {
+      if (state.size && state.size?.includes(action.payload)) {
+        const newArr = state.size.filter((size) => size !== action.payload);
+        return { ...state, size: newArr };
       }
     },
   },
@@ -54,5 +75,9 @@ export const {
   setPriceFilter,
   setSizeFilter,
   setTypeFilter,
+  addColorFilter,
+  addSizeFilter,
+  removeColorFilter,
+  removeSizeFilter,
 } = filterSlice.actions;
 export default filterSlice.reducer;

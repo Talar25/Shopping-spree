@@ -41,9 +41,9 @@
   background-color: var(--primary-color-light);
   color: var(--secondary-color-lighter);
   width: 30rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  display: grid;
+  grid-template-rows: repeat(3, 20px);
+  gap: 0.5rem;
 }
 
 .filters > * {
@@ -66,11 +66,23 @@
 }
 
 .filters_sizesBtn {
-  border: 1px solid var(--secondary-color-lighter);
+  border: none;
   background: none;
   color: var(--secondary-color-light);
   height: 20px;
   width: 20px;
+}
+
+.filters_price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.filters_priceInput {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .grid {
