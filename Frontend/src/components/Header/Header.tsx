@@ -76,7 +76,6 @@ const Popup = () => {
   const notificationObject = useSelector(
     (state: RootState) => state.notification
   );
-  console.log(notificationObject);
 
   const goToCart = () => {
     navigate('/cart');

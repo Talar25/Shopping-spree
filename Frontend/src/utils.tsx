@@ -119,3 +119,27 @@ export const checkFilters = (
 export const capitalizeFirstLetter = (string: string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
+
+export const getAllColors = (data: Product[]) => {
+  const uniqueColors = new Set();
+
+  data.forEach((item) => {
+    item.color.forEach((color) => {
+      uniqueColors.add(color);
+    });
+  });
+
+  return Array.from(uniqueColors);
+};
+
+export const getAllSizes = (data: Product[]) => {
+  const uniqueSizes = new Set();
+
+  data.forEach((item) => {
+    item.size.forEach((size) => {
+      uniqueSizes.add(size);
+    });
+  });
+
+  return Array.from(uniqueSizes);
+};

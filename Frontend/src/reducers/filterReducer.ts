@@ -36,6 +36,13 @@ const filterSlice = createSlice({
     setColorFilter(state, action) {
       return { ...state, color: action.payload };
     },
+    addColorFilter(state, action) {
+      if (!state.color) return { ...state, color: action.payload };
+      else {
+        const arr = [...state.color, action.payload];
+        return { ...state, color: arr };
+      }
+    },
   },
 });
 

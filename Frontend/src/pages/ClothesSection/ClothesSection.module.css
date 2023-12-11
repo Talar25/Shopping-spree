@@ -1,14 +1,76 @@
+.section {
+  position: relative;
+}
+
 .wrapper {
   margin: 5rem auto;
   max-width: 100rem;
-  text-align: center;
 }
 
 .wrapper h1 {
-  display: inline-block;
+  width: 20rem;
   margin: 0 auto 2rem;
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--secondary-color-light);
+}
+
+.clothesButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clothesButtons button {
+  border: 1px solid var(--secondary-color-lighter);
+  padding: 0 1rem;
+  background: none;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.clothesButtons button:focus {
+  font-weight: 500;
+}
+
+.filters {
+  border: 1px solid var(--secondary-color-lighter);
+  padding: 1rem;
+  position: absolute;
+  z-index: 98;
+  background-color: var(--primary-color-light);
+  color: var(--secondary-color-lighter);
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.filters > * {
+  color: var(--secondary-color-light);
+}
+
+.filters_btnBig {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.filters_colors,
+.filters_sizes {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filters_sizesBtn {
+  border: 1px solid var(--secondary-color-lighter);
+  background: none;
+  color: var(--secondary-color-light);
+  height: 20px;
+  width: 20px;
 }
 
 .grid {
@@ -16,4 +78,5 @@
   /* grid-template-columns: repeat(2, 1fr); */
   column-gap: 2rem;
   row-gap: 5rem;
+  margin-top: 2rem;
 }
