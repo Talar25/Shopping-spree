@@ -7,7 +7,6 @@ import { EmpyCart } from '../../components/Header/EmpyCart';
 
 export const Cart = () => {
   const cart = useSelector((state: RootState) => state.cart);
-  console.log(cart);
 
   const numberOfProducts = cart.reduce((acc, cur) => acc + cur.number, 0);
   const cost = cart.reduce((acc, cur) => acc + cur.number * cur.price, 0);
@@ -32,7 +31,11 @@ export const Cart = () => {
               </ul>
             </div>
           </div>
-          <PurchaseSummary numberOfProducts={numberOfProducts} cost={cost} />
+          <PurchaseSummary
+            numberOfProducts={numberOfProducts}
+            cost={cost}
+            type=''
+          />
         </div>
       ) : (
         <div style={{ marginTop: '15%' }}>

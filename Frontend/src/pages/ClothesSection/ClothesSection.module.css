@@ -50,6 +50,10 @@
   color: var(--secondary-color-light);
 }
 
+.filterButton {
+  color: var(--secondary-color-lighter);
+}
+
 .filters_btnBig {
   display: flex;
   justify-content: space-between;
@@ -83,6 +87,14 @@
   display: flex;
   align-items: center;
   gap: 0.4rem;
+}
+
+input[type='range'] {
+  padding: 0;
+}
+
+input:focus {
+  border: none;
 }
 
 .grid {

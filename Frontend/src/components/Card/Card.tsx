@@ -30,7 +30,7 @@ export const Card = ({ id }: { id: string }) => {
         </div>
         <div className={styles.text}>
           <h3>{title}</h3>
-          <p>{price} EURO</p>
+          <p>{price} €</p>
         </div>
       </div>
     </Link>

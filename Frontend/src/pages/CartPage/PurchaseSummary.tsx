@@ -12,7 +12,7 @@ export const PurchaseSummary = ({
 }) => {
   const navigate = useNavigate();
 
-  const handleNavigation = (e) => {
+  const handleNavigation = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     if (type === 'small') navigate('/cart');
   };
