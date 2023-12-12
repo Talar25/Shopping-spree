@@ -7,6 +7,7 @@ import Women from './pages/Women/Women';
 import Men from './pages/Men/Men';
 import CartPage from './pages/CartPage/CartPage';
 import ClothesSection from './pages/ClothesSection/ClothesSection';
+import AboutUs from './pages/AboutUs/AboutUs';
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { initializeProducts } from './reducers/productReducer';
@@ -60,7 +61,7 @@ function App() {
           element={<ClothesSection genderType='men' />}
         ></Route>
       </Route>
-
+      <Route path='about' element={<AboutUs />}></Route>
       <Route path='product/:id' element={<ProductPage />}></Route>
       <Route path=':cart' element={<CartPage />}></Route>
       <Route path='*' element={<PageNotFound />} />

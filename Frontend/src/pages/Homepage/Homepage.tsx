@@ -22,7 +22,7 @@ const Homepage = () => {
   return (
     <>
       <Header />
-      <HeroSection />
+      <HeroSection type='homepage' />
       <Advertisement />
       <Banner />
       <Footer />
