@@ -8,6 +8,7 @@ import { Outlet } from 'react-router';
 //import hooks
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import Authors from '../../components/Authors/Authors';
 
 const Women = () => {
   const { pathname } = useLocation();
@@ -21,6 +22,7 @@ const Women = () => {
       <WomenHeading />
       <Outlet />
       <Footer />
+      <Authors />
     </>
   );
 };

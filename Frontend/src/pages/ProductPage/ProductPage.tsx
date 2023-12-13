@@ -8,6 +8,7 @@ import { useLocation } from 'react-router-dom';
 //importing types
 import { ProductDescription } from '../../components/ProductDescription/ProductDescription';
 import { RecommendedItems } from './RecommendedItems';
+import Authors from '../../components/Authors/Authors';
 
 const ProductPage = () => {
   const { pathname } = useLocation();
@@ -22,6 +23,7 @@ const ProductPage = () => {
       <ProductDescription />
       <RecommendedItems />
       <Footer />
+      <Authors />
     </>
   );
 };

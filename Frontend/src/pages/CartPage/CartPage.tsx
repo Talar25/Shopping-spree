@@ -7,6 +7,7 @@ import { useLocation } from 'react-router-dom';
 import { Cart } from './Cart';
 import { useDispatch } from 'react-redux';
 import { setNotification } from '../../reducers/notificationReducer';
+import Authors from '../../components/Authors/Authors';
 
 const CartPage = () => {
   const { pathname } = useLocation();
@@ -21,6 +22,7 @@ const CartPage = () => {
       <Header />
       <Cart />
       <Footer />
+      <Authors />
     </>
   );
 };

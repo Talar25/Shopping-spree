@@ -10,6 +10,7 @@ import { useDispatch } from 'react-redux';
 import { setToInitial } from '../../reducers/filterReducer';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import Authors from '../../components/Authors/Authors';
 
 const Homepage = () => {
   const dispatch = useDispatch();
@@ -22,10 +23,12 @@ const Homepage = () => {
   return (
     <>
       <Header />
+
       <HeroSection type='homepage' />
       <Advertisement />
       <Banner />
       <Footer />
+      <Authors />
     </>
   );
 };

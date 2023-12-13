@@ -1,0 +1,28 @@
+.authors {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 0.5rem 0 0;
+  background-color: var(--secondary-color-darker);
+  color: var(--primary-color-light);
+  font-size: 1.3rem;
+}
+
+.authors span {
+  margin-right: 3rem;
+}
+
+.authors_paragraph {
+  animation: moveText 40s linear infinite;
+  white-space: nowrap;
+}
+
+/* Keyframes for the animation */
+@keyframes moveText {
+  0% {
+    transform: translateX(60%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
