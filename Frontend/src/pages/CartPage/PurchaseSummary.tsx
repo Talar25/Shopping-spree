@@ -15,6 +15,9 @@ export const PurchaseSummary = ({
   const handleNavigation = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     if (type === 'small') navigate('/cart');
+    else {
+      navigate('/shop');
+    }
   };
 
   return (

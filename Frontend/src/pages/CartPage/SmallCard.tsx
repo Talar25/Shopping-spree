@@ -91,33 +91,38 @@ export const SmallCard = ({
                 {product?.price * product.number}.00€
               </div>
             </div>
-            <div className={styles.color}>
-              <RectangleIcon sx={{ color: product.color }} /> {product?.color}
-            </div>
-            <div className={styles.cardBottom}>
-              <div className={styles.addButtons}>
-                <div className={styles.addAmount}>
-                  <AddIcon
-                    sx={{ fontSize: '20px', cursor: 'pointer' }}
-                    onClick={addNumber}
-                  />
-                  <span>{product.number}</span>
-                  <RemoveIcon
-                    sx={{ fontSize: '20px', cursor: 'pointer' }}
-                    onClick={substractNumber}
-                  />
+            {
+              <>
+                <div className={styles.color}>
+                  <RectangleIcon sx={{ color: product.color }} />{' '}
+                  {product?.color}
                 </div>
-                <div className={styles.changeSize}>
-                  <span>Size: {product.size}</span>
+                <div className={styles.cardBottom}>
+                  <div className={styles.addButtons}>
+                    <div className={styles.addAmount}>
+                      <AddIcon
+                        sx={{ fontSize: '20px', cursor: 'pointer' }}
+                        onClick={addNumber}
+                      />
+                      <span>{product.number}</span>
+                      <RemoveIcon
+                        sx={{ fontSize: '20px', cursor: 'pointer' }}
+                        onClick={substractNumber}
+                      />
+                    </div>
+                    <div className={styles.changeSize}>
+                      <span>Size: {product.size}</span>
+                    </div>
+                  </div>
+                  <div className={styles.removeBtn}>
+                    <DeleteIcon
+                      sx={{ fontSize: '20px', cursor: 'pointer' }}
+                      onClick={deleteProduct}
+                    />
+                  </div>
                 </div>
-              </div>
-              <div className={styles.removeBtn}>
-                <DeleteIcon
-                  sx={{ fontSize: '20px', cursor: 'pointer' }}
-                  onClick={deleteProduct}
-                />
-              </div>
-            </div>
+              </>
+            }
           </div>
         </div>
       )}
