@@ -13,14 +13,14 @@
 }
 
 .authors_paragraph {
-  animation: moveText 40s linear infinite;
+  animation: moveText 30s linear infinite;
   white-space: nowrap;
 }
 
 /* Keyframes for the animation */
 @keyframes moveText {
   0% {
-    transform: translateX(60%);
+    transform: translateX(100%);
   }
   100% {
     transform: translateX(-100%);

@@ -82,7 +82,8 @@ export const checkFilters = (
   return products.filter((product) => {
     const genderMatch = !filter.gender || product.gender === filter.gender;
     const typeMatch = !filter.type || product.type === filter.type;
-    const priceMatch = !filter.price || +product.price <= filter.price;
+    const priceMatch =
+      (!filter.price && filter.price !== 0) || +product.price <= filter.price;
     const colorMatch =
       !filter.color ||
       filter.color.length === 0 ||

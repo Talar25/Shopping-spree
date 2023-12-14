@@ -1,7 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { CartProduct } from '../types';
 
-const initialState: CartProduct[] = [];
+const retrieveCart = (): CartProduct | [] => {
+  const userData = localStorage.getItem('cart');
+  return userData ? (JSON.parse(userData) as CartProduct) : [];
+};
+
+const initialState: CartProduct[] = retrieveCart();
 
 const cartReducer = createSlice({
   name: 'cart',
@@ -21,7 +26,7 @@ const cartReducer = createSlice({
             ? { ...product, number: product.number + 1 }
             : product
         );
-
+        localStorage.setItem('cart', JSON.stringify(updatedProducts));
         return updatedProducts;
       }
       if (!searchedProduct) {
@@ -29,7 +34,7 @@ const cartReducer = createSlice({
           ...action.payload,
           number: 1,
         };
-
+        localStorage.setItem('cart', JSON.stringify([...state, newObject]));
         return [...state, newObject];
       }
     },
@@ -40,7 +45,9 @@ const cartReducer = createSlice({
       const searchedProduct = state.find(
         (p) => p.id === id && p.color === color && p.size === size
       );
-      return state.filter((p) => p !== searchedProduct);
+      const newArr = state.filter((p) => p !== searchedProduct);
+      localStorage.setItem('cart', JSON.stringify(newArr));
+      return newArr;
     },
 
     addTheSameProduct(state, action) {
@@ -52,11 +59,13 @@ const cartReducer = createSlice({
       );
 
       if (searchedProduct) {
-        return state.map((product) =>
+        const newArr = state.map((product) =>
           product.id === id && product.color === color && product.size === size
             ? { ...product, number: product.number + 1 }
             : product
         );
+        localStorage.setItem('cart', JSON.stringify(newArr));
+        return newArr;
       }
     },
     removeTheSameProduct(state, action) {
@@ -68,14 +77,18 @@ const cartReducer = createSlice({
       );
 
       if (searchedProduct && searchedProduct.number > 1) {
-        return state.map((product) =>
+        const newArr = state.map((product) =>
           product.id === id && product.color === color && product.size === size
             ? { ...product, number: product.number - 1 }
             : product
         );
+        localStorage.setItem('cart', JSON.stringify(newArr));
+        return newArr;
       }
       if (searchedProduct && searchedProduct.number === 1) {
-        return state.filter((p) => p !== searchedProduct);
+        const newArr = state.filter((p) => p !== searchedProduct);
+        localStorage.setItem('cart', JSON.stringify(newArr));
+        return newArr;
       }
     },
   },

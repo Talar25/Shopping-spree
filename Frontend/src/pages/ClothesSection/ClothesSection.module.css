@@ -10,6 +10,7 @@
 .wrapper h1 {
   width: 20rem;
   margin: 0 auto 2rem;
+  text-align: center;
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--secondary-color-light);
 }
