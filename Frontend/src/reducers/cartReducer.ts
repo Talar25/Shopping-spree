@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { CartProduct } from '../types';
 
-const retrieveCart = (): CartProduct | [] => {
+const retrieveCart = (): CartProduct[] | [] => {
   const userData = localStorage.getItem('cart');
-  return userData ? (JSON.parse(userData) as CartProduct) : [];
+  return userData ? (JSON.parse(userData) as CartProduct[]) : [];
 };
 
 const initialState: CartProduct[] = retrieveCart();

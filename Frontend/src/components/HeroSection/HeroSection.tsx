@@ -1,4 +1,5 @@
 import styles from './HeroSection.module.css';
+//import component
 import { Carousel } from './Carousel';
 
 const HeroSection = ({ type }: { type: string }) => {

@@ -1,6 +1,9 @@
 import styles from './CartPage.module.css';
+//import hooks
 import { useSelector } from 'react-redux';
+//import types
 import { RootState } from '../../store';
+//import components
 import { SmallCard } from './SmallCard';
 import { PurchaseSummary } from './PurchaseSummary';
 import { EmpyCart } from '../../components/Header/EmpyCart';
@@ -9,7 +12,7 @@ export const Cart = () => {
   const cart = useSelector((state: RootState) => state.cart);
 
   const numberOfProducts = cart.reduce((acc, cur) => acc + cur.number, 0);
-  const cost = cart.reduce((acc, cur) => acc + cur.number * cur.price, 0);
+  const cost = cart.reduce((acc, cur) => cur.number * +cur.price + acc, 0);
 
   return (
     <section className={styles.cartSection}>

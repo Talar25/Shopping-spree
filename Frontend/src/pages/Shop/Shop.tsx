@@ -3,8 +3,9 @@ import Footer from '../../components/Footer/Footer';
 import styles from './Shop.module.css';
 import { useNavigate } from 'react-router';
 import { PurchaseRecap } from './PurchaseRecap';
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer, useState } from 'react';
 import countryService from '../../services/country';
+import { FormTypes } from '../../types';
 
 const Shop = () => {
   return (
@@ -34,20 +35,66 @@ const ShopForm = () => {
   );
 };
 
+const initialState: FormTypes = {
+  name: '',
+  surname: '',
+  email: '',
+  telephone: 0,
+  country: '',
+  province: '',
+  adress: '',
+  city: '',
+  postcode: '',
+};
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'name': {
+      return { ...state, name: action.payload };
+    }
+    case 'surname': {
+      return { ...state, surname: action.payload };
+    }
+    case 'email': {
+      return { ...state, email: action.payload };
+    }
+    case 'telephone': {
+      return { ...state, telephone: action.payload };
+    }
+    case 'country': {
+      return { ...state, country: action.payload };
+    }
+    case 'province': {
+      return { ...state, province: action.payload };
+    }
+    case 'adress': {
+      return { ...state, adress: action.payload };
+    }
+    case 'city': {
+      return { ...state, city: action.payload };
+    }
+    case 'postcode': {
+      return { ...state, postcode: action.payload };
+    }
+  }
+  //
+}
+
 const Form = () => {
-  const [country, setCountry] = useState(null);
-  const [countryInput, setCountryInput] = useState<string | null>(null);
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const [countries, setCountries] = useState(null);
+  const [countryInput, setCountryInput] = useState<string>('');
+
   useEffect(() => {
-    const fetchData = async (name: string) => {
-      const country = await countryService.getCountry(name);
-      if (!country) {
+    const fetchData = async () => {
+      const countriesData = await countryService.getCountries();
+      if (!countriesData) {
         return null;
       }
-      setCountry(country);
-      console.log(country);
+      setCountries(countriesData);
     };
-    if (countryInput) fetchData(countryInput);
-  }, [countryInput]);
+    fetchData();
+  }, []);
 
   return (
     <div className={styles.form_wrapper}>
@@ -61,20 +108,26 @@ const Form = () => {
         <h2>
           Before filling in your location details, please choose your country:{' '}
         </h2>
-        <input
-          type='text'
-          placeholder='Country'
-          required
-          onChange={(e) => setCountryInput(e.target.value)}
-        ></input>
-        <select defaultValue=''>
-          <option value='' disabled>
-            Province
-          </option>
-          <option value='option1'>Option 1</option>
-          <option value='option2'>Option 2</option>
-          <option value='option3'>Option 3</option>
-        </select>
+        <div className={styles.countryInput_box}>
+          <input
+            className={styles.countryInput}
+            type='text'
+            placeholder='Country'
+            required
+            value={state.country}
+            onChange={(e) =>
+              dispatch({ type: 'country', payload: e.target.value })
+            }
+          ></input>
+          {state.country.length > 0 && (
+            <Countries
+              countries={countries}
+              filteredValue={state.country}
+              dispatch={dispatch}
+            />
+          )}
+        </div>
+        <input type='text' placeholder='Province' required></input>
         <input type='text' placeholder='Adress' required></input>
         <input type='text' placeholder='City' required></input>
         <input type='text' placeholder='Postcode' required></input>
@@ -86,3 +139,42 @@ const Form = () => {
     </div>
   );
 };
+
+function Countries({ countries, filteredValue, dispatch }) {
+  const [countrySelected, setCountrySelected] = useState(false);
+  let filteredCountries = [];
+
+  const chooseCountry = (country) => {
+    dispatch({ type: 'country', payload: country });
+    setCountrySelected(true);
+  };
+
+  if (filteredValue.length > 0) {
+    filteredCountries = countries.filter((country) =>
+      country.name.common.toLowerCase().includes(filteredValue.toLowerCase())
+    );
+  }
+
+  if (
+    filteredCountries.length > 10 ||
+    filteredCountries.length === 0 ||
+    countrySelected
+  ) {
+    return <div></div>;
+  }
+
+  return (
+    <div className={styles.countries_modal}>
+      <ul>
+        {filteredCountries.map((country) => (
+          <li
+            key={country.name.common}
+            onClick={() => chooseCountry(country.name.common)}
+          >
+            {country.name.common}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}

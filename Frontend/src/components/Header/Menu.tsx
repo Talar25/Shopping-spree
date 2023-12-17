@@ -10,17 +10,19 @@ export const Menu = ({
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const menuRef = useRef(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const closeOnEscape = (e) => {
-      if (e.keyCode === 27) {
+    const closeOnEscape = (
+      e: React.MouseEvent<HTMLButtonElement> | KeyboardEvent
+    ) => {
+      if ('keyCode' in e && e.keyCode === 27) {
         setOpen(false);
       }
     };
 
-    const closeOnClickOutside = (e) => {
-      if (menuRef.current && !menuRef.current.contains(e.target)) {
+    const closeOnClickOutside = (e: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(e.target as Node)) {
         setOpen(false);
       }
     };

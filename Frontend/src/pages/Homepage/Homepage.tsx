@@ -5,12 +5,12 @@ import HeroSection from '../../components/HeroSection/HeroSection';
 import Advertisement from '../../components/Advertisement/Advertisement';
 import Banner from '../../components/Banner/Banner';
 import Footer from '../../components/Footer/Footer';
+import Authors from '../../components/Authors/Authors';
 //import hooks
 import { useDispatch } from 'react-redux';
 import { setToInitial } from '../../reducers/filterReducer';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import Authors from '../../components/Authors/Authors';
 
 const Homepage = () => {
   const dispatch = useDispatch();

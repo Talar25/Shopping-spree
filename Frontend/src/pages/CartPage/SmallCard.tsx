@@ -1,19 +1,22 @@
 import styles from './CartPage.module.css';
+//import components
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import RectangleIcon from '@mui/icons-material/Rectangle';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import DeleteIcon from '@mui/icons-material/Delete';
+//import hooks
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../store';
 import { getPhotos } from '../../utils';
 import {
   addTheSameProduct,
   removeProductFromCart,
   removeTheSameProduct,
 } from '../../reducers/cartReducer';
+//import types
+import { RootState } from '../../store';
 
 export const SmallCard = ({
   id,
@@ -88,7 +91,7 @@ export const SmallCard = ({
                 <div className={styles.heading}>{product?.name}</div>
               </Link>
               <div className={styles.price}>
-                {product?.price * product.number}.00€
+                {+product?.price * product.number}.00€
               </div>
             </div>
             {

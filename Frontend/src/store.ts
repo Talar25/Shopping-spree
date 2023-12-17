@@ -1,4 +1,5 @@
 import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
+import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import productReducer from './reducers/productReducer';
 import filterReducer from './reducers/filterReducer';
 import notificationReducer from './reducers/notificationReducer';
@@ -30,5 +31,10 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   unknown,
   Action<string>
 >;
+
+// Use throughout your app instead of plain `useDispatch` and `useSelector`
+type DispatchFunc = () => AppDispatch;
+export const useAppDispatch: DispatchFunc = useDispatch;
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 export default store;

@@ -1,4 +1,5 @@
 import styles from './Banner.module.css';
+//import component
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const Banner = () => {

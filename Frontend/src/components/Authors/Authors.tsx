@@ -1,4 +1,5 @@
 import styles from './Authors.module.css';
+//import data
 import authorsArr from './authorsArr';
 
 const Authors = () => {

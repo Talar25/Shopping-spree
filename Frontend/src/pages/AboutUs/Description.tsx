@@ -1,5 +1,7 @@
 import styles from './AboutUs.module.css';
+//import component
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+//import images
 import DescriptionImage from '../../assets/Portrait-two_girls_in_red.jpg';
 import DescriptionImagePlaceholder from '../../assets/Portrait-two_girls_in_red_Placeholder.jpg';
 

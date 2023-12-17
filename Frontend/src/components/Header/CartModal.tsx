@@ -9,7 +9,6 @@ import { RootState } from '../../store';
 import { ProductsGallery } from './ProductsGallery';
 import { useEffect, useRef } from 'react';
 import { EmpyCart } from './EmpyCart';
-import { useParams } from 'react-router';
 
 export const CartModal = ({
   open,
@@ -18,20 +17,20 @@ export const CartModal = ({
   open: boolean;
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const cartRef = useRef(null);
+  const cartRef = useRef<HTMLDivElement>(null);
   const cart = useSelector((state: RootState) => state.cart);
   const cartLength = cart.reduce((acc, cur) => acc + cur.number, 0);
-  const cost = cart.reduce((acc, cur) => acc + cur.number * cur.price, 0);
+  const cost = cart.reduce((acc, cur) => acc + cur.number * +cur.price, 0);
 
   useEffect(() => {
-    const close = (e) => {
-      if (e.keyCode === 27) {
+    const close = (e: React.MouseEvent<HTMLButtonElement> | KeyboardEvent) => {
+      if ('keyCode' in e && e.keyCode === 27) {
         setOpen(false);
       }
     };
 
-    const closeOnClickOutside = (e) => {
-      if (cartRef.current && !cartRef.current.contains(e.target)) {
+    const closeOnClickOutside = (e: MouseEvent) => {
+      if (cartRef.current && !cartRef.current.contains(e.target as Node)) {
         setOpen(false);
       }
     };

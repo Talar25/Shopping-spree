@@ -1,9 +1,12 @@
 import styles from './ProductPage.module.css';
+//import components
 import { CarouselItem } from '../../components/HeroSection/CarouselItem';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import CircleIcon from '@mui/icons-material/Circle';
+//import hooks
 import { useState } from 'react';
+//import types
 import { CarouselItemInterface } from '../../types';
 
 export function ProductCarousel({ items }: { items: CarouselItemInterface[] }) {

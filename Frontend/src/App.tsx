@@ -10,12 +10,12 @@ import ClothesSection from './pages/ClothesSection/ClothesSection';
 import AboutUs from './pages/AboutUs/AboutUs';
 import Shop from './pages/Shop/Shop';
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useAppDispatch } from './store';
 import { initializeProducts } from './reducers/productReducer';
 import ProductPage from './pages/ProductPage/ProductPage';
 
 function App() {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     dispatch(initializeProducts());

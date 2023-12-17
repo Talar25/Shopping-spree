@@ -1,4 +1,5 @@
 import styles from './ClothesSection.module.css';
+//import hooks
 import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../store';
@@ -9,9 +10,11 @@ import {
   removeSizeFilter,
   setPriceFilter,
 } from '../../reducers/filterReducer';
+import { getAllColors, getAllSizes } from '../../utils';
+//import components
 import AddIcon from '@mui/icons-material/Add';
 import RectangleIcon from '@mui/icons-material/Rectangle';
-import { getAllColors, getAllSizes } from '../../utils';
+//import types
 import { Color, Size } from '../../types';
 
 export const Filters = () => {
@@ -32,6 +35,7 @@ export const Filters = () => {
 
   useEffect(() => {
     setPrice(maxPrice);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleAddPrice = (
@@ -46,7 +50,7 @@ export const Filters = () => {
   };
 
   const handleAddColor = (
-    e: React.ChangeEvent<HTMLInputElement>,
+    e: React.MouseEvent<SVGSVGElement>,
     color: string
   ) => {
     e.preventDefault();
@@ -60,7 +64,7 @@ export const Filters = () => {
   };
 
   const handleAddSize = (
-    e: React.ChangeEvent<HTMLInputElement>,
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     size: string
   ) => {
     e.preventDefault();
@@ -108,11 +112,11 @@ export const Filters = () => {
                     : 'none'
                 }`,
               }}
-              onClick={(e) => handleAddSize(e, size)}
+              onClick={(e) => handleAddSize(e, size as string)}
               className={styles.filters_sizesBtn}
-              key={size + size}
+              key={((size as string) + size) as string}
             >
-              {size}
+              {size as string}
             </button>
           ))}
         </div>
@@ -126,21 +130,26 @@ export const Filters = () => {
       </button>
       {colorIsShowed && (
         <div className={styles.filters_colors}>
-          {colors.map((color) => (
-            <RectangleIcon
-              key={color + color}
-              sx={{
-                color: color,
-                fontSize: '20px',
-                border: `${
-                  filter.color?.includes(color as Color)
-                    ? '1px solid black'
-                    : 'none'
-                }`,
-              }}
-              onClick={(e) => handleAddColor(e, color)}
-            />
-          ))}
+          {colors.map((color) => {
+            const colorName = color as string;
+            return (
+              <RectangleIcon
+                key={((color as string) + color) as string}
+                sx={{
+                  color: colorName,
+                  fontSize: '20px',
+                  border: `${
+                    filter.color?.includes(color as Color)
+                      ? '1px solid black'
+                      : 'none'
+                  }`,
+                }}
+                onClick={(e: React.MouseEvent<SVGSVGElement>) =>
+                  handleAddColor(e, color as string)
+                }
+              />
+            );
+          })}
         </div>
       )}
     </div>

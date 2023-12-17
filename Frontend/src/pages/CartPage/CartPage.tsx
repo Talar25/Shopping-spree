@@ -4,9 +4,10 @@ import Footer from '../../components/Footer/Footer';
 //import hooks
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Cart } from './Cart';
 import { useDispatch } from 'react-redux';
-import { setNotification } from '../../reducers/notificationReducer';
+import { removeNotification } from '../../reducers/notificationReducer';
+//import components
+import { Cart } from './Cart';
 import Authors from '../../components/Authors/Authors';
 
 const CartPage = () => {
@@ -15,7 +16,7 @@ const CartPage = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    dispatch(setNotification(null, 0));
+    dispatch(removeNotification());
   }, [pathname, dispatch]);
   return (
     <>

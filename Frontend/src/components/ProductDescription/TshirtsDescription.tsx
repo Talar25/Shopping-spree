@@ -1,5 +1,7 @@
 import styles from './ProductDescription.module.css';
+//import component
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+//import images
 import Tshirts1 from '../../assets/Landscape_tshirts.jpg';
 import Tshirts1_PLACEHOLDER from '../../assets/Landscape_tshirts_PLACEHOLDER.jpg';
 import Tshirts2 from '../../assets/Landscape_tshirts2.jpg';

@@ -1,5 +1,6 @@
-import { useNavigate } from 'react-router';
 import styles from './CartPage.module.css';
+//import hooks
+import { useNavigate } from 'react-router';
 
 export const PurchaseSummary = ({
   numberOfProducts,
@@ -12,7 +13,9 @@ export const PurchaseSummary = ({
 }) => {
   const navigate = useNavigate();
 
-  const handleNavigation = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleNavigation = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     e.preventDefault();
     if (type === 'small') navigate('/cart');
     else {

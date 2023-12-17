@@ -1,6 +1,9 @@
 import styles from './Advertisement.module.css';
-import { Link, useNavigate } from 'react-router-dom';
+//import hooks
+import { useNavigate } from 'react-router-dom';
+//import components
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+//import images
 import Image1 from '../../assets/Portrait-red_jacket_man.jpg';
 import Image1Placeholder from '../../assets/Portrait-red_jacket_man_PLACEHOLDER.jpg';
 import Image2 from '../../assets/Portrait_girl_green_jacket.jpg';

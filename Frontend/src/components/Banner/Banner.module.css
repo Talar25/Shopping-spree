@@ -27,6 +27,11 @@
   display: flex;
   align-items: center;
   gap: 2rem;
+  border: 0;
+}
+
+input:focus {
+  border: 2px solid var(--primary-color);
 }
 
 .input > * {

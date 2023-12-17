@@ -1,7 +1,5 @@
-interface Author {
-  author: string;
-  name: string;
-}
+//import types
+import { Author } from '../../types';
 
 const authorsArr: Author[] = [
   { author: 'Dom Hill', name: 'Woman_sweatshirt' },
@@ -32,16 +30,3 @@ const authorsArr: Author[] = [
 ];
 
 export default authorsArr;
-
-import IMG_WOMAN_TSHIRT from '../../assets/Woman_tshirt.jpg';
-import IMG_WOMAN_TSHIRT_PLACEHOLDER from '../../assets/Woman_tshirt_PLACEHOLDER.jpg';
-import IMG_WOMAN_TROUSERS from '../../assets/Woman_trousers.jpg';
-import IMG_WOMAN_TROUSERS_PLACEHOLDER from '../../assets/Woman_trousers_PLACEHOLDER.jpg';
-import IMG_MAN_JACKET from '../../assets/Man_jacket.jpg';
-import IMG_MAN_JACKET_PLACEHOLDER from '../../assets/Man_jacket_PLACEHOLDER.jpg';
-import IMG_MAN_SWEATSHIRT from '../../assets/Man_sweatshirt.jpg';
-import IMG_MAN_SWEATSHIRT_PLACEHOLDER from '../../assets/Man_sweatshirt_PLACEHOLDER.jpg';
-import IMG_MAN_TSHIRT from '../../assets/Man_tshirt.jpg';
-import IMG_MAN_TSHIRT_PLACEHOLDER from '../../assets/Man_tshirt_PLACEHOLDER.jpg';
-import IMG_MAN_TROUSERS from '../../assets/Man_trousers.jpg';
-import IMG_MAN_TROUSERS_PLACEHOLDER from '../../assets/Man_trousers_PLACEHOLDER.jpg';

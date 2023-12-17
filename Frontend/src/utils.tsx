@@ -17,10 +17,10 @@ import IMG_MAN_TROUSERS from './assets/Man_trousers.jpg';
 import IMG_MAN_TROUSERS_PLACEHOLDER from './assets/Man_trousers_PLACEHOLDER.jpg';
 
 //types imports
-import { Product, FilterTypes } from './types';
+import { Product, FilterTypes, CartProduct } from './types';
 
 export const getPhotos = (
-  filter: FilterTypes | Product,
+  filter: FilterTypes | Product | CartProduct,
   type: string
 ): { image: string; imagePlaceholder: string } => {
   if (filter.gender === 'male') {

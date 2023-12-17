@@ -1,12 +1,12 @@
 import axios from 'axios';
 
-const getCountry = async (name: string) => {
+const getCountries = async () => {
   try {
     const response = await axios.get(
-      `https://restcountries.com/v3.1/name/${name}?fullText=true`
+      `https://studies.cs.helsinki.fi/restcountries/api/all`
     );
 
-    return response.data[0];
+    return response.data;
   } catch (error) {
     // console.error('Error:', error);
     return { found: false };
@@ -14,5 +14,5 @@ const getCountry = async (name: string) => {
 };
 
 export default {
-  getCountry,
+  getCountries,
 };

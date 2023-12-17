@@ -1,9 +1,9 @@
 import styles from './ProductPage.module.css';
 import RectangleIcon from '@mui/icons-material/Rectangle';
 import { useParams } from 'react-router';
-import { useSelector, useDispatch } from 'react-redux';
-import { MouseEvent, useEffect, useState } from 'react';
-import { RootState } from '../../store';
+import { useSelector } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { RootState, useAppDispatch } from '../../store';
 import { capitalizeFirstLetter, getPhotos } from '../../utils';
 import { CarouselItemInterface, CartProduct } from '../../types';
 import { addProductToCart } from '../../reducers/cartReducer';
@@ -12,7 +12,7 @@ import { setNotification } from '../../reducers/notificationReducer';
 
 export const ProductComponent = () => {
   //dispatch
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   //state for images
   const [image1, setImage1] = useState('');
@@ -46,8 +46,7 @@ export const ProductComponent = () => {
     }
   }, [product]);
 
-  const AddObjectToCart = (e: MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    e.preventDefault();
+  const AddObjectToCart = async () => {
     if (product && color && size) {
       const object: CartProduct = {
         ...product,
@@ -56,6 +55,7 @@ export const ProductComponent = () => {
         number: 1,
       };
       dispatch(addProductToCart(object));
+      // eslint-disable-next-line react-hooks/rules-of-hooks
       dispatch(setNotification(object, 10));
     }
   };
@@ -107,7 +107,7 @@ export const ProductComponent = () => {
               ))}
             </ul>
           </div>
-          <button onClick={(e) => AddObjectToCart(e)}>Add to cart</button>
+          <button onClick={AddObjectToCart}>Add to cart</button>
         </div>
       </div>
     </section>

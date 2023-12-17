@@ -1,10 +1,13 @@
 import styles from './ClothesSection.module.css';
+//import hooks
 import { useSelector } from 'react-redux';
+import { useEffect, useState, useCallback } from 'react';
+import { checkFilters } from '../../utils';
+//import types
 import { RootState } from '../../store';
 import { Product } from '../../types';
-import { useEffect, useState, useCallback } from 'react';
+//import components
 import { Card } from '../../components/Card/Card';
-import { checkFilters } from '../../utils';
 
 export const Clothes = () => {
   const [filteredProducts, setFilterProducts] = useState<Product[]>([]);

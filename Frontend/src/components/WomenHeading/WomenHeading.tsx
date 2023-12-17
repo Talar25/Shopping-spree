@@ -1,5 +1,7 @@
 import styles from './WomenHeading.module.css';
+//import component
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+//import images
 import Image1 from '../../assets/Landscape_two_girls_laying.jpg';
 import Image1Placeholder from '../../assets/Landscape_two_girls_laying_PLACEHOLDER.jpg';
 

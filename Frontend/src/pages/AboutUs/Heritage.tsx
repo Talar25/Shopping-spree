@@ -1,9 +1,11 @@
 import styles from './AboutUs.module.css';
+//import components
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import AutoFixHighIcon from '@mui/icons-material/AutoFixHigh';
 import FlagIcon from '@mui/icons-material/Flag';
 import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+//import images
 import HeritageImage from '../../assets/Warsaw_oldtown.jpg';
 import HeritageImagePlaceholder from '../../assets/Warsaw_oldtown_Placeholder.jpg';
 

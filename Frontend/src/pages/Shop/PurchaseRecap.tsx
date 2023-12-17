@@ -6,7 +6,7 @@ import { RecapCard } from './RecapCard';
 export const PurchaseRecap = () => {
   const cart = useSelector((state: RootState) => state.cart);
   const cartLength = cart.reduce((acc, cur) => acc + cur.number, 0);
-  const cost = cart.reduce((acc, cur) => acc + cur.number * cur.price, 0);
+  const cost = cart.reduce((acc, cur) => acc + cur.number * +cur.price, 0);
 
   return (
     <div className={styles.purchaseRecap}>

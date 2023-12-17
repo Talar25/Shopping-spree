@@ -46,7 +46,7 @@ export const RecapCard = ({
         <div className={styles.recapCard_text}>
           <div className={styles.recapCard_top}>
             <h3>{product.name}</h3>
-            <p>{product.price * product.number} €</p>
+            <p>{+product.price * product.number} €</p>
           </div>
           <span>{product.color}</span>
           <span>Number: {product.number}</span>

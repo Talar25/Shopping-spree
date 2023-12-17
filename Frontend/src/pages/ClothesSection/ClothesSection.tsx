@@ -10,7 +10,6 @@ import {
   setTypeFilter,
 } from '../../reducers/filterReducer';
 import { setGrid } from '../../reducers/gridReducer';
-
 //mui icons
 import ViewArrayIcon from '@mui/icons-material/ViewArray';
 import ViewColumnIcon from '@mui/icons-material/ViewColumn';
@@ -43,6 +42,7 @@ const ClothesSection = ({ genderType }: { genderType: string }) => {
 
   useEffect(() => {
     dispatch(setToInitial());
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -50,7 +50,9 @@ const ClothesSection = ({ genderType }: { genderType: string }) => {
     dispatch(setGenderFilter(gender));
   }, [dispatch, gender, paramValue]);
 
-  const changeVisibility = (e) => {
+  const changeVisibility = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     e.preventDefault();
     setIsShowed(!isShowed);
   };

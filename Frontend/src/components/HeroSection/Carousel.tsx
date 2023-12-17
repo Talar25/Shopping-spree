@@ -1,6 +1,9 @@
 import styles from './HeroSection.module.css';
+//import hooks
 import { useState, useEffect } from 'react';
+//import data
 import items from './items';
+//import component
 import { CarouselItem } from './CarouselItem';
 
 export const Carousel = () => {

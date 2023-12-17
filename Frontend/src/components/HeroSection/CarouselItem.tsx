@@ -1,5 +1,7 @@
 import styles from './HeroSection.module.css';
+//import types
 import { CarouselItemInterface } from '../../types';
+//import component
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 export const CarouselItem = ({ item }: { item: CarouselItemInterface }) => {

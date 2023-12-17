@@ -4,7 +4,8 @@
   /* primary color */
   --primary-color-darker: #666666;
   --primary-color-dark: #999999;
-  --primary-color: rgba(204, 204, 204, 0.189);
+  --primary-color: #cccccc;
+  --primary-color-semilight: rgba(204, 204, 204, 0.189);
   --primary-color-light: #ffffff;
 
   /* secondary colors */

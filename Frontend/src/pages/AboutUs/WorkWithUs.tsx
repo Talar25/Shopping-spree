@@ -1,13 +1,16 @@
 import styles from './AboutUs.module.css';
+//import component
 import { LazyLoadImage } from 'react-lazy-load-image-component';
+//import hook
 import { useNavigate } from 'react-router-dom';
+//import images
 import WorktWithUsImage from '../../assets/Happy_people.jpg';
 import WorktWithUsImagePlaceholder from '../../assets/Happy_people_PLACEHOLDER.jpg';
 
 export const WorkWithUs = () => {
   const navigate = useNavigate();
 
-  const goToCareers = (e) => {
+  const goToCareers = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
 
     navigate('/careers');
@@ -27,7 +30,7 @@ export const WorkWithUs = () => {
           </p>
 
           <button
-            onClick={goToCareers}
+            onClick={(e) => goToCareers(e)}
             className={styles.workWithUs_text_button}
           >
             Find more
