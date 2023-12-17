@@ -71,15 +71,20 @@ export interface FilterTypes {
 export type NewProduct = Omit<Product, 'id'>;
 
 export interface FormTypes {
-  name: string;
-  surname: string;
-  email: string;
-  telephone: number;
-  country: string;
-  province: string;
-  adress: string;
-  city: string;
-  postcode: string;
+  name: FormInput;
+  surname: FormInput;
+  email: FormInput;
+  telephone: FormInput;
+  country: FormInput;
+  province: FormInput;
+  adress: FormInput;
+  city: FormInput;
+  postcode: FormInput;
+}
+
+interface FormInput {
+  content: string;
+  error: string;
 }
 
 export interface Author {
