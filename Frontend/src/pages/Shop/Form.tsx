@@ -4,6 +4,9 @@ import countryService from '../../services/country';
 import { InputComponent } from './InputComponent';
 import { Countries } from './Countries';
 import { FormTypes } from '../../types';
+import { useNavigate } from 'react-router';
+import { useAppDispatch } from '../../store';
+import { setNavigation } from '../../reducers/navigationReducer';
 
 // eslint-disable-next-line react-refresh/only-export-components
 export const initialState: FormTypes = {
@@ -51,6 +54,9 @@ export function reducer(
   action: { type: unknown; payload: unknown }
 ) {
   switch (action.type) {
+    case 'initial': {
+      return initialState;
+    }
     case 'name': {
       return { ...state, name: { content: action.payload, error: '' } };
     }
@@ -240,7 +246,8 @@ export const Form = () => {
   );
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [countries, setCountries] = useState<any[] | null>(null);
-  const [isFinished, setIsFinished] = useState(false);
+  const navigate = useNavigate();
+  const appdispatch = useAppDispatch();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -276,13 +283,15 @@ export const Form = () => {
 
     if (
       (Object.values(state) as { content: string; error: string }[]).some(
-        (field) => field.error.length > 0
+        (field) => field.error && field.error.length > 0
       )
     ) {
       console.log('Try again');
     } else {
       console.log('u win');
-      setIsFinished(true);
+      dispatch({ type: 'initial' });
+      appdispatch(setNavigation('afterShopping'));
+      navigate('/aftershopping');
     }
   };
 
@@ -359,7 +368,6 @@ export const Form = () => {
           <button>Continue</button>
         </div>
       </form>
-      {isFinished && <p>You win</p>}
     </div>
   );
 };

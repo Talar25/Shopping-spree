@@ -11,11 +11,18 @@ import { useDispatch } from 'react-redux';
 import { setToInitial } from '../../reducers/filterReducer';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { setNavigation } from '../../reducers/navigationReducer';
 
 const Homepage = () => {
   const dispatch = useDispatch();
-  dispatch(setToInitial());
+
   const { pathname } = useLocation();
+
+  useEffect(() => {
+    dispatch(setToInitial());
+    dispatch(setNavigation(null));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);

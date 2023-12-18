@@ -1,3 +1,5 @@
+import { setNavigation } from '../../reducers/navigationReducer';
+import { useAppDispatch } from '../../store';
 import styles from './CartPage.module.css';
 //import hooks
 import { useNavigate } from 'react-router';
@@ -12,13 +14,17 @@ export const PurchaseSummary = ({
   type: string;
 }) => {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   const handleNavigation = (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     e.preventDefault();
-    if (type === 'small') navigate('/cart');
-    else {
+    if (type === 'small') {
+      dispatch(setNavigation('cart'));
+      navigate('/cart');
+    } else {
+      dispatch(setNavigation('shop'));
       navigate('/shop');
     }
   };

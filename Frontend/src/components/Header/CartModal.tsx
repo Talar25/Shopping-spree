@@ -21,6 +21,7 @@ export const CartModal = ({
   const cart = useSelector((state: RootState) => state.cart);
   const cartLength = cart.reduce((acc, cur) => acc + cur.number, 0);
   const cost = cart.reduce((acc, cur) => acc + cur.number * +cur.price, 0);
+  const navigation = useSelector((state: RootState) => state.navigation);
 
   useEffect(() => {
     const close = (e: React.MouseEvent<HTMLButtonElement> | KeyboardEvent) => {
@@ -43,31 +44,33 @@ export const CartModal = ({
     };
   }, [setOpen]);
   return (
-    <section
-      ref={cartRef}
-      className={styles.cartModal}
-      style={open ? { right: '0' } : { right: '-40rem' }}
-    >
-      <div className={styles.cartModal_Nav}>
-        <h2>Shopping cart ({cartLength})</h2>
-        <CloseIcon
-          sx={{ fontSize: 25, cursor: 'pointer' }}
-          onClick={() => setOpen(false)}
-        />
-      </div>
-      {cartLength > 0 ? (
-        <>
-          <ProductsGallery cart={cart} />
-
-          <PurchaseSummary
-            numberOfProducts={cartLength}
-            cost={cost}
-            type='small'
+    navigation !== 'cart' && (
+      <section
+        ref={cartRef}
+        className={styles.cartModal}
+        style={open ? { right: '0' } : { right: '-40rem' }}
+      >
+        <div className={styles.cartModal_Nav}>
+          <h2>Shopping cart ({cartLength})</h2>
+          <CloseIcon
+            sx={{ fontSize: 25, cursor: 'pointer' }}
+            onClick={() => setOpen(false)}
           />
-        </>
-      ) : (
-        <EmpyCart />
-      )}
-    </section>
+        </div>
+        {cartLength > 0 ? (
+          <>
+            <ProductsGallery cart={cart} />
+
+            <PurchaseSummary
+              numberOfProducts={cartLength}
+              cost={cost}
+              type='small'
+            />
+          </>
+        ) : (
+          <EmpyCart />
+        )}
+      </section>
+    )
   );
 };

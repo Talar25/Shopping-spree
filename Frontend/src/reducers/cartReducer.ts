@@ -12,6 +12,10 @@ const cartReducer = createSlice({
   name: 'cart',
   initialState,
   reducers: {
+    setToInitial() {
+      localStorage.setItem('cart', JSON.stringify([]));
+      return initialState;
+    },
     addProductToCart(state, action) {
       const id = action.payload.id;
       const color = action.payload.color;
@@ -99,5 +103,6 @@ export const {
   removeProductFromCart,
   addTheSameProduct,
   removeTheSameProduct,
+  setToInitial,
 } = cartReducer.actions;
 export default cartReducer.reducer;

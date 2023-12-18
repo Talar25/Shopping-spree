@@ -13,6 +13,7 @@ import { useEffect } from 'react';
 import { useAppDispatch } from './store';
 import { initializeProducts } from './reducers/productReducer';
 import ProductPage from './pages/ProductPage/ProductPage';
+import AfterShopping from './pages/AfterShopping/AfterShopping';
 
 function App() {
   const dispatch = useAppDispatch();
@@ -64,6 +65,7 @@ function App() {
       </Route>
       <Route path='about' element={<AboutUs />}></Route>
       <Route path='shop' element={<Shop />}></Route>
+      <Route path='aftershopping' element={<AfterShopping />}></Route>
       <Route path='product/:id' element={<ProductPage />}></Route>
       <Route path='/cart' element={<CartPage />}></Route>
       <Route path='*' element={<PageNotFound />} />

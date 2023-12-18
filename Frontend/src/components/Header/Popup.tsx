@@ -1,18 +1,21 @@
 import styles from './Header.module.css';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
-import { RootState } from '../../store';
+import { RootState, useAppDispatch } from '../../store';
 import { SmallCard } from '../../pages/CartPage/SmallCard';
 //import types
 import { CartProduct } from '../../types';
+import { setNavigation } from '../../reducers/navigationReducer';
 
 export const Popup = () => {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
   const notificationObject = useSelector(
     (state: RootState) => state.notification as CartProduct | null
   );
 
   const goToCart = () => {
+    dispatch(setNavigation('cart'));
     navigate('/cart');
   };
 

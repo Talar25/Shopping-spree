@@ -46,7 +46,7 @@ export const ProductComponent = () => {
     }
   }, [product]);
 
-  const AddObjectToCart = async () => {
+  const AddObjectToCart = () => {
     if (product && color && size) {
       const object: CartProduct = {
         ...product,

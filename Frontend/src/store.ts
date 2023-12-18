@@ -3,7 +3,7 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import productReducer from './reducers/productReducer';
 import filterReducer from './reducers/filterReducer';
 import notificationReducer from './reducers/notificationReducer';
-import searchReducer from './reducers/searchReducer';
+import navigationReducer from './reducers/navigationReducer';
 import gridReducer from './reducers/gridReducer';
 import cartReducer from './reducers/cartReducer';
 cartReducer;
@@ -13,7 +13,7 @@ const store = configureStore({
     products: productReducer,
     filter: filterReducer,
     notification: notificationReducer,
-    searchTerm: searchReducer,
+    navigation: navigationReducer,
     grid: gridReducer,
     cart: cartReducer,
   },

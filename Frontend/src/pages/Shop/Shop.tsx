@@ -5,13 +5,19 @@ import { useNavigate } from 'react-router';
 import { PurchaseRecap } from './PurchaseRecap';
 
 import { Form } from './Form';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../store';
+import PageNotFound from '../PageNotFound/PageNotFound';
 
 const Shop = () => {
-  return (
+  const navigation = useSelector((state: RootState) => state.navigation);
+  return navigation === 'shop' ? (
     <>
       <ShopForm />
       <Footer />
     </>
+  ) : (
+    <PageNotFound />
   );
 };
 
