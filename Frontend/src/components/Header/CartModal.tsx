@@ -48,7 +48,7 @@ export const CartModal = ({
       <section
         ref={cartRef}
         className={styles.cartModal}
-        style={open ? { right: '0' } : { right: '-100%' }}
+        style={open ? { right: '0' } : { right: '-100vw' }}
       >
         <div className={styles.cartModal_Nav}>
           <h2>Shopping cart ({cartLength})</h2>
