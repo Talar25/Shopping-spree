@@ -9,7 +9,7 @@ export const CarouselItem = ({ item }: { item: CarouselItemInterface }) => {
     <div className={styles.carouselItem}>
       <LazyLoadImage
         width='100%'
-        height='auto'
+        height='100%'
         src={item.src}
         alt='hero-img'
         placeholderSrc={item.placeholder}

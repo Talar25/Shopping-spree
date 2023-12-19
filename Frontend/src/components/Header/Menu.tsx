@@ -39,7 +39,7 @@ export const Menu = ({
     <section
       ref={menuRef}
       className={styles.menu}
-      style={open ? { left: '0' } : { left: '-40rem' }}
+      style={open ? { left: '0' } : { left: '-100%' }}
     >
       <div className={styles.menuNav}>
         <CloseIcon sx={{ fontSize: 25 }} onClick={() => setOpen(false)} />

@@ -55,7 +55,6 @@ export const ProductComponent = () => {
         number: 1,
       };
       dispatch(addProductToCart(object));
-      // eslint-disable-next-line react-hooks/rules-of-hooks
       dispatch(setNotification(object, 10));
     }
   };

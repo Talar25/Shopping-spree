@@ -4,8 +4,8 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 //import hook
 import { useNavigate } from 'react-router-dom';
 //import images
-import WorktWithUsImage from '../../assets/Happy_people.jpg';
-import WorktWithUsImagePlaceholder from '../../assets/Happy_people_PLACEHOLDER.jpg';
+import WorktWithUsImage from '../../assets/Happy_people.webp';
+import WorktWithUsImagePlaceholder from '../../assets/Happy_people_PLACEHOLDER.webp';
 
 export const WorkWithUs = () => {
   const navigate = useNavigate();

@@ -1,4 +1,5 @@
 import MenuIcon from '@mui/icons-material/Menu';
+
 import styles from './Header.module.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -62,6 +63,7 @@ const Header = () => {
       <Link to='/'>
         <h1 className={styles.heading}>Shopping Spree</h1>
       </Link>
+
       <button className={styles.cartOpen_btn} onClick={handleOpenCart}>
         Shopping bag ({cartLength})
       </button>

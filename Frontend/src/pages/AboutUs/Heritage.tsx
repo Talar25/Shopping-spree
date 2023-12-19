@@ -6,8 +6,8 @@ import FlagIcon from '@mui/icons-material/Flag';
 import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 //import images
-import HeritageImage from '../../assets/Warsaw_oldtown.jpg';
-import HeritageImagePlaceholder from '../../assets/Warsaw_oldtown_Placeholder.jpg';
+import HeritageImage from '../../assets/Warsaw_oldtown.webp';
+import HeritageImagePlaceholder from '../../assets/Warsaw_oldtown_Placeholder.webp';
 
 export const Heritage = () => {
   return (

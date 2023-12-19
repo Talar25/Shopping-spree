@@ -2,10 +2,10 @@ import styles from './ProductDescription.module.css';
 //import component
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 //import images
-import Tshirts1 from '../../assets/Landscape_tshirts.jpg';
-import Tshirts1_PLACEHOLDER from '../../assets/Landscape_tshirts_PLACEHOLDER.jpg';
-import Tshirts2 from '../../assets/Landscape_tshirts2.jpg';
-import Tshirts2_PLACEHOLDER from '../../assets/Landscape_tshirts2_PLACEHOLDER.jpg';
+import Tshirts1 from '../../assets/Landscape_tshirts.webp';
+import Tshirts1_PLACEHOLDER from '../../assets/Landscape_tshirts_PLACEHOLDER.webp';
+import Tshirts2 from '../../assets/Landscape_tshirts2.webp';
+import Tshirts2_PLACEHOLDER from '../../assets/Landscape_tshirts2_PLACEHOLDER.webp';
 
 export const TshirtsDescription = () => {
   return (

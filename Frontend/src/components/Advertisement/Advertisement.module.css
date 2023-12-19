@@ -1,34 +1,42 @@
 .advertisment {
+  margin-top: -4rem;
 }
 
 .wrapper {
   display: flex;
-  height: 100vh;
+  max-height: 100vh;
   overflow: hidden;
-
+  align-items: flex-start;
   opacity: 0.85;
 }
 
 .card {
   flex: 1;
+  position: relative;
+  max-height: 900px;
 }
 
 .image {
-  height: 100rem;
-  flex: 1;
-
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
   position: relative;
+  object-fit: cover;
+  object-position: center;
+}
+
+.image img {
+  display: block;
+  min-width: 100%;
 }
 
 .text {
   position: absolute;
   font-size: 3.5rem;
-  bottom: 40%;
-  left: 10%;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   color: var(--primary-color-light);
   text-align: center;
@@ -44,4 +52,49 @@
   font-size: 2.5rem;
   text-transform: uppercase;
   cursor: pointer;
+}
+
+/* xl 1344px*/
+@media (max-width: 84em) {
+  .card {
+    max-height: 640px;
+  }
+}
+
+/* lg 1024px*/
+@media (max-width: 64em) {
+  .card {
+    max-height: 550px;
+  }
+
+  .text {
+    bottom: 6%;
+    font-size: 2.6rem;
+
+    color: var(--primary-color-light);
+    text-align: center;
+    padding-bottom: 2.5rem;
+    border-bottom: 2px solid var(--primary-color-light);
+    cursor: pointer;
+  }
+}
+
+/* md 912px*/
+@media (max-width: 57em) {
+  .card {
+    height: 100%;
+  }
+
+  .wrapper {
+    display: block;
+    height: 100%;
+  }
+}
+
+/* sm 640px*/
+@media (max-width: 40em) {
+}
+
+/* xs 475px*/
+@media (max-width: 30em) {
 }

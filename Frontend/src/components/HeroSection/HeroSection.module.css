@@ -1,7 +1,6 @@
 .carousel {
   overflow: hidden;
   width: 100vw;
-  /* height: calc(100vh - 9rem); */
   height: 100vh;
   margin-top: -9rem;
 }
@@ -17,10 +16,21 @@
 }
 
 .carouselItem {
-  height: 100%;
+  max-height: 100%;
+  max-width: 100%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
+}
+
+.carouselItem img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .hero_about {
@@ -59,4 +69,13 @@
 .about_heading p,
 .about_heading span {
   font-size: 2rem;
+}
+
+/* 2xl 1536px*/
+@media (max-width: 96em) {
+  .carouselItem img {
+    /* min-width: 100vw; */
+    max-height: 110%;
+    min-height: 100vh;
+  }
 }

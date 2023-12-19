@@ -266,9 +266,7 @@ export const Form = () => {
     };
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
+  const checkErrors = async () => {
     dispatch({ type: 'error/name' });
     dispatch({ type: 'error/surname' });
     dispatch({ type: 'error/email' });
@@ -280,15 +278,17 @@ export const Form = () => {
     dispatch({ type: 'error/adress' });
     dispatch({ type: 'error/city' });
     dispatch({ type: 'error/postcode' });
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    await checkErrors();
 
     if (
-      (Object.values(state) as { content: string; error: string }[]).some(
+      !(Object.values(state) as { content: string; error: string }[]).some(
         (field) => field.error && field.error.length > 0
       )
     ) {
-      console.log('Try again');
-    } else {
-      console.log('u win');
       dispatch({ type: 'initial' });
       appdispatch(setNavigation('afterShopping'));
       navigate('/aftershopping');

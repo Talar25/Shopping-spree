@@ -2,8 +2,8 @@ import styles from './ManHeading.module.css';
 //import component
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 //import images
-import Image1 from '../../assets/Landscape_four_men.jpg';
-import Image1Placeholder from '../../assets/Landscape_four_men_PLACEHOLDER.jpg';
+import Image1 from '../../assets/Landscape_four_men.webp';
+import Image1Placeholder from '../../assets/Landscape_four_men_PLACEHOLDER.webp';
 
 const ManHeading = () => {
   return (

@@ -2,10 +2,10 @@ import styles from './ProductDescription.module.css';
 //import component
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 //import images
-import Sweatshirt1 from '../../assets/Landscape_sweatshirt1.jpg';
-import Sweatshirt1_PLACEHOLDER from '../../assets/Landscape_sweatshirt1_PLACEHOLDER.jpg';
-import Sweatshirt2 from '../../assets/Landscape_sweatshirt2.jpg';
-import Sweatshirt2_PLACEHOLDER from '../../assets/Landscape_sweatshirt2_PLACEHOLDER.jpg';
+import Sweatshirt1 from '../../assets/Landscape_sweatshirt1.webp';
+import Sweatshirt1_PLACEHOLDER from '../../assets/Landscape_sweatshirt1_PLACEHOLDER.webp';
+import Sweatshirt2 from '../../assets/Landscape_sweatshirt2.webp';
+import Sweatshirt2_PLACEHOLDER from '../../assets/Landscape_sweatshirt2_PLACEHOLDER.webp';
 
 export const SweatshirtDescription = () => {
   return (

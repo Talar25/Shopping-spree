@@ -1,20 +1,20 @@
 //Images imports
-import IMG_WOMAN_JACKET from './assets/Woman_jacket.jpg';
-import IMG_WOMAN_JACKET_PLACEHOLDER from './assets/Woman_jacket_PLACEHOLDER.jpg';
-import IMG_WOMAN_SWEATSHIRT from './assets/Woman_sweatshirt.jpg';
-import IMG_WOMAN_SWEATSHIRT_PLACEHOLDER from './assets/Woman_sweatshirt_PLACEHOLDER.jpg';
-import IMG_WOMAN_TSHIRT from './assets/Woman_tshirt.jpg';
-import IMG_WOMAN_TSHIRT_PLACEHOLDER from './assets/Woman_tshirt_PLACEHOLDER.jpg';
-import IMG_WOMAN_TROUSERS from './assets/Woman_trousers.jpg';
-import IMG_WOMAN_TROUSERS_PLACEHOLDER from './assets/Woman_trousers_PLACEHOLDER.jpg';
-import IMG_MAN_JACKET from './assets/Man_jacket.jpg';
-import IMG_MAN_JACKET_PLACEHOLDER from './assets/Man_jacket_PLACEHOLDER.jpg';
-import IMG_MAN_SWEATSHIRT from './assets/Man_sweatshirt.jpg';
-import IMG_MAN_SWEATSHIRT_PLACEHOLDER from './assets/Man_sweatshirt_PLACEHOLDER.jpg';
-import IMG_MAN_TSHIRT from './assets/Man_tshirt.jpg';
-import IMG_MAN_TSHIRT_PLACEHOLDER from './assets/Man_tshirt_PLACEHOLDER.jpg';
-import IMG_MAN_TROUSERS from './assets/Man_trousers.jpg';
-import IMG_MAN_TROUSERS_PLACEHOLDER from './assets/Man_trousers_PLACEHOLDER.jpg';
+import IMG_WOMAN_JACKET from './assets/Woman_jacket.webp';
+import IMG_WOMAN_JACKET_PLACEHOLDER from './assets/Woman_jacket_PLACEHOLDER.webp';
+import IMG_WOMAN_SWEATSHIRT from './assets/Woman_sweatshirt.webp';
+import IMG_WOMAN_SWEATSHIRT_PLACEHOLDER from './assets/Woman_sweatshirt_PLACEHOLDER.webp';
+import IMG_WOMAN_TSHIRT from './assets/Woman_tshirt.webp';
+import IMG_WOMAN_TSHIRT_PLACEHOLDER from './assets/Woman_tshirt_PLACEHOLDER.webp';
+import IMG_WOMAN_TROUSERS from './assets/Woman_trousers.webp';
+import IMG_WOMAN_TROUSERS_PLACEHOLDER from './assets/Woman_trousers_PLACEHOLDER.webp';
+import IMG_MAN_JACKET from './assets/Man_jacket.webp';
+import IMG_MAN_JACKET_PLACEHOLDER from './assets/Man_jacket_PLACEHOLDER.webp';
+import IMG_MAN_SWEATSHIRT from './assets/Man_sweatshirt.webp';
+import IMG_MAN_SWEATSHIRT_PLACEHOLDER from './assets/Man_sweatshirt_PLACEHOLDER.webp';
+import IMG_MAN_TSHIRT from './assets/Man_tshirt.webp';
+import IMG_MAN_TSHIRT_PLACEHOLDER from './assets/Man_tshirt_PLACEHOLDER.webp';
+import IMG_MAN_TROUSERS from './assets/Man_trousers.webp';
+import IMG_MAN_TROUSERS_PLACEHOLDER from './assets/Man_trousers_PLACEHOLDER.webp';
 
 //types imports
 import { Product, FilterTypes, CartProduct } from './types';

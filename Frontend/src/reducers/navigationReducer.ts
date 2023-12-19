@@ -7,7 +7,6 @@ const navigationSlice = createSlice({
   initialState,
   reducers: {
     setNavigation(_state, action) {
-      console.log('Setting navigation:', action.payload);
       return action.payload;
     },
   },
