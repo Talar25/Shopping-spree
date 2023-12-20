@@ -12,16 +12,16 @@ const ManHeading = () => {
         <div className={styles.image}>
           <LazyLoadImage
             width='100%'
-            height='auto'
+            height='100%'
             src={Image1}
             alt='hero-img'
             placeholderSrc={Image1Placeholder}
             effect='black-and-white'
           />
-          <div className={styles.text}>
-            <h2>Refined Classics for the Modern Gentleman</h2>
-            <p>Elevate Your Wardrobe with Timeless Sophistication</p>
-          </div>
+        </div>
+        <div className={styles.text}>
+          <h2>Refined Classics for the Modern Gentleman</h2>
+          <p>Elevate Your Wardrobe with Timeless Sophistication</p>
         </div>
       </div>
     </section>

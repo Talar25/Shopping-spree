@@ -215,12 +215,12 @@
   .menu,
   .cartModal {
     font-size: 1.5rem;
-    width: 50%;
+    width: 60%;
     transition: all 0.5s;
   }
 
   .cartModal_Nav h2 {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 }
 

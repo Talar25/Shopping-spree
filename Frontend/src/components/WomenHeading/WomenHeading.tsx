@@ -18,10 +18,10 @@ const WomenHeading = () => {
             placeholderSrc={Image1Placeholder}
             effect='black-and-white'
           />
-          <div className={styles.text}>
-            <h2>Empower Your Style</h2>
-            <p> Discover a Collection as Unique as You Are.</p>
-          </div>
+        </div>
+        <div className={styles.text}>
+          <h2>Empower Your Style</h2>
+          <p> Discover a Collection as Unique as You Are.</p>
         </div>
       </div>
     </section>

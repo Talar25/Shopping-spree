@@ -14,3 +14,17 @@
   overflow: hidden;
   position: relative;
 }
+
+/* sm 640px*/
+@media (max-width: 40em) {
+  .text {
+    font-size: 1rem;
+  }
+}
+
+/* xs 475px*/
+@media (max-width: 30em) {
+  .text {
+    font-size: 0.8rem;
+  }
+}

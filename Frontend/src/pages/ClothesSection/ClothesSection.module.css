@@ -104,4 +104,17 @@ input:focus {
   column-gap: 2rem;
   row-gap: 5rem;
   margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+/* md 768px*/
+@media (max-width: 48em) {
+}
+
+/* sm 640px*/
+@media (max-width: 40em) {
+}
+
+/* xs 475px*/
+@media (max-width: 30em) {
 }
