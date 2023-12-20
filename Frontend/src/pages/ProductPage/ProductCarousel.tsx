@@ -73,7 +73,9 @@ export function ProductCarousel({ items }: { items: CarouselItemInterface[] }) {
         style={{ transform: `translateX(-${activeIndex * 100}%)` }}
       >
         {items.map((item, index) => {
-          return <CarouselItem item={item} key={item.src + index} />;
+          return (
+            <CarouselItem item={item} key={item.src + index} type='product' />
+          );
         })}
       </div>
     </div>

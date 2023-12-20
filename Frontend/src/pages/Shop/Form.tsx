@@ -286,7 +286,7 @@ export const Form = () => {
 
     if (
       !(Object.values(state) as { content: string; error: string }[]).some(
-        (field) => field.error && field.error.length > 0
+        (field) => !field.content || (field.error && field.error.length > 0)
       )
     ) {
       dispatch({ type: 'initial' });

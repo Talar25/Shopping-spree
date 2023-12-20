@@ -54,6 +54,13 @@
   cursor: pointer;
 }
 
+/* 2xl 1536px*/
+@media (max-width: 96em) {
+  .card {
+    max-height: 800px;
+  }
+}
+
 /* xl 1344px*/
 @media (max-width: 84em) {
   .card {

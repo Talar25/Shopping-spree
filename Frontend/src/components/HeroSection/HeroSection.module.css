@@ -25,6 +25,13 @@
   text-align: center;
 }
 
+.productItem {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 .carouselItem img {
   display: block;
   margin: auto;
@@ -41,7 +48,7 @@
       rgba(36, 42, 46, 0.3),
       rgba(36, 42, 46, 0.2)
     ),
-    url('../../assets/Blue_pattern.jpg');
+    url('../../assets/Blue_pattern.webp');
   background-size: cover;
   background-position: center;
 

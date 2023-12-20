@@ -91,3 +91,29 @@ export interface Author {
   author: string;
   name: string;
 }
+
+export interface ClothesArr {
+  name: string;
+  img1: string;
+  img1Placeholder: string;
+  img2: string;
+  img2Placeholder: string;
+  text: {
+    text1: {
+      heading: string;
+      paragraph: string;
+    };
+    text2: {
+      heading: string;
+      paragraph: string;
+    };
+    text3: {
+      heading: string;
+      paragraph: string;
+    };
+    text4: {
+      heading: string;
+      paragraph: string;
+    };
+  };
+}

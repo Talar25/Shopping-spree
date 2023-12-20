@@ -5,11 +5,7 @@ import { useParams } from 'react-router';
 //types
 import { RootState } from '../../store';
 //components
-//images
-import { JacketDescription } from './JacketDescription';
-import { TshirtsDescription } from './TshirtsDescription';
-import { TrousersDescription } from './TrousersDescription';
-import { SweatshirtDescription } from './SweatshirtDescription';
+import { ClothDescription } from './ClothDescription';
 
 export const ProductDescription = () => {
   //get id from params
@@ -23,10 +19,10 @@ export const ProductDescription = () => {
 
   return (
     <section className={styles.section}>
-      {type === 'jacket' && <JacketDescription />}
-      {type === 'tshirt' && <TshirtsDescription />}
-      {type === 'trousers' && <TrousersDescription />}
-      {type === 'sweatshirt' && <SweatshirtDescription />}
+      {type === 'jacket' && <ClothDescription type='jacket' />}
+      {type === 'tshirt' && <ClothDescription type='tshirt' />}
+      {type === 'trousers' && <ClothDescription type='trousers' />}
+      {type === 'sweatshirt' && <ClothDescription type='sweatshirt' />}
     </section>
   );
 };

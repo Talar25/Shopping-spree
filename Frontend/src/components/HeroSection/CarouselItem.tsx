@@ -4,9 +4,19 @@ import { CarouselItemInterface } from '../../types';
 //import component
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 
-export const CarouselItem = ({ item }: { item: CarouselItemInterface }) => {
+export const CarouselItem = ({
+  item,
+  type,
+}: {
+  item: CarouselItemInterface;
+  type?: string;
+}) => {
   return (
-    <div className={styles.carouselItem}>
+    <div
+      className={`${type !== 'product' && styles.carouselItem} ${
+        type === 'product' && styles.productItem
+      }`}
+    >
       <LazyLoadImage
         width='100%'
         height='100%'

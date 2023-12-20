@@ -224,8 +224,8 @@
   }
 }
 
-/* xs 475px*/
-@media (max-width: 30em) {
+/* xs 560px*/
+@media (max-width: 35em) {
   .header {
     font-size: 1rem;
     padding: 0 1rem;
