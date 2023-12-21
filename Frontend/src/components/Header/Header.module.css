@@ -53,12 +53,14 @@
 .menu {
   padding: 3rem 5rem;
   left: 0;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
 }
 
 .menu .menuNav {
   display: flex;
   gap: 2rem;
-  margin-bottom: 4rem;
+  margin-bottom: 1rem;
 }
 
 .menuNav > * {
@@ -82,12 +84,8 @@
   transform: translate(2px);
 }
 
-.clothes {
-  margin-bottom: 7rem;
-}
-
 .miscellaneous {
-  margin-top: 15rem;
+  justify-content: flex-end;
 }
 
 .cartModal {

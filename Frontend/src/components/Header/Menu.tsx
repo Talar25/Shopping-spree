@@ -63,7 +63,7 @@ export const Menu = ({
           <Link to='/women/trousers'>Trousers</Link>
         </li>
 
-        <li style={{ fontWeight: 'bold', marginTop: '2rem' }}>
+        <li style={{ fontWeight: 'bold' }}>
           <Link to='/men'>Men</Link>
         </li>
 
