@@ -105,10 +105,6 @@
   height: 10px;
 }
 
-/* .purchaseRecap_total {
-  background-color: var;
-} */
-
 .form_wrapper {
   width: 70rem;
   margin: 5rem auto;
@@ -225,4 +221,59 @@
 
 .countries_modal li:hover {
   background-color: var(--primary-color-semilight);
+}
+
+/* xl 1280px*/
+@media (max-width: 80em) {
+  .shopForm_wrapper {
+    grid-template-columns: 1fr 350px;
+  }
+
+  .form_wrapper {
+    width: 100%;
+    padding: 0 2rem;
+  }
+}
+
+/* lg 1024px*/
+@media (max-width: 64em) {
+  .form h2 {
+    font-size: 1.8rem;
+  }
+
+  .form_buttonWrapper button {
+    font-size: 1.6rem;
+  }
+}
+
+/* md 768px*/
+@media (max-width: 48em) {
+  .shopForm_wrapper {
+    grid-template-columns: 1fr;
+    height: 100%;
+  }
+
+  .shopForm {
+    height: 100%;
+  }
+}
+
+/* sm 640px*/
+@media (max-width: 40em) {
+}
+
+/* xs 475px*/
+@media (max-width: 30em) {
+  .form {
+    display: block;
+  }
+
+  .form h2 {
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+  }
+
+  .input_box {
+    margin-bottom: 1rem;
+  }
 }
