@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api/products': {
-        target: 'http://localhost:3001',
+        target: 'https://shoppingspree.onrender.com/',
         changeOrigin: true,
       },
     },
