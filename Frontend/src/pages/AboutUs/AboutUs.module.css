@@ -15,9 +15,19 @@
 }
 
 .description_image {
-  width: 100%;
-  display: block;
+  height: 100vh;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   padding-left: 10rem;
+}
+
+.description_image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .description_text {
@@ -51,11 +61,21 @@
 }
 
 .heritage_image {
-  height: 600px;
+  /* min-height: 600px; */
   overflow: hidden;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   position: relative;
 }
+
+.heritage_image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
 .heritage_imageTxt {
   position: absolute;
   font-size: 5rem;
@@ -141,12 +161,10 @@
 }
 
 .workWithUs {
-  height: 100vh;
   background-color: var(--third-color);
 }
 
 .workWithUs_wrapper {
-  /* max-width: 140rem; */
   color: var(--primary-color-light);
   margin: 10rem auto;
   height: 100%;
@@ -160,6 +178,7 @@
 .workWithUs_text {
   width: 70rem;
   margin: 30% auto;
+  padding: 0 1.5rem;
 }
 
 .workWithUs_text_heading {
@@ -193,4 +212,332 @@
 
 .workWithUs_text_button:active {
   transform: scale(0.98);
+}
+
+.workWithUs_image {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.workWithUs_image img {
+  vertical-align: bottom;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* xl 1280px*/
+@media (max-width: 80em) {
+  .description_text {
+    padding: 40% 6rem;
+  }
+
+  .description_text h2 {
+    font-size: 4rem;
+  }
+
+  .description_text p {
+    font-size: 2rem;
+  }
+
+  .heritage_wrapper {
+    padding: 0 2rem;
+  }
+
+  .heritage_imageTxt {
+    font-size: 18rem;
+    width: 100%;
+  }
+
+  .heritage_attribute {
+    font-size: 1.1rem;
+    text-align: center;
+    padding: 1rem;
+
+    border-bottom: 1px solid var(--primary-color-darker);
+  }
+
+  .heritage_history {
+    grid-template-columns: 450px auto;
+  }
+
+  .heritage_history > * {
+    font-size: 1.8rem;
+  }
+
+  .heritage_history_heading {
+    font-size: 8rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .workWithUs {
+    height: 100%;
+  }
+
+  .workWithUs_text {
+    width: 60rem;
+    margin: 50% auto;
+    padding: 0 1rem 0 10rem;
+  }
+
+  .workWithUs_text_heading {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  .workWithUs_text_paragraph {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin-bottom: 5rem;
+    width: 70%;
+  }
+}
+
+/* lg 1024px*/
+@media (max-width: 64em) {
+  .description_image {
+    padding-left: 5rem;
+  }
+
+  .description_text {
+    padding: 50% 6rem;
+  }
+
+  .description_text h2 {
+    margin-bottom: 5rem;
+    text-transform: uppercase;
+    font-size: 3rem;
+    color: var(--secondary-color-light);
+  }
+
+  .description_text p {
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
+  }
+
+  .heritage_imageTxt {
+    font-size: 13rem;
+    width: 100%;
+    bottom: -5%;
+  }
+
+  .heritage_flexWrapper {
+    display: block;
+  }
+
+  .heritage_attribute {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: none;
+  }
+
+  .heritage_attribute svg {
+    margin-bottom: 1.5rem;
+  }
+
+  .heritage_attribute p {
+    width: 50%;
+  }
+
+  .heritage_attribute {
+    border-right: none;
+  }
+
+  .heritage_attribute:first-of-type {
+    border-left: none;
+  }
+
+  .heritage_history {
+    grid-template-columns: 400px auto;
+  }
+
+  .heritage_history > * {
+    font-size: 1.6rem;
+  }
+
+  .heritage_history_heading {
+    font-size: 7rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .workWithUs_wrapper {
+    display: block;
+  }
+
+  .workWithUs_text {
+    max-width: 100rem;
+    margin: 5rem auto;
+  }
+
+  .workWithUs_text_heading {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  .workWithUs_text_paragraph {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin-bottom: 5rem;
+    width: 70%;
+  }
+}
+
+/* md 768px*/
+@media (max-width: 48em) {
+  .description {
+    height: 100%;
+  }
+
+  .description_wrapper {
+    margin: 10rem auto 5rem;
+
+    grid-template-columns: 1fr;
+  }
+
+  .description_image {
+    padding-left: 0rem;
+  }
+
+  .description_text {
+    padding: 20% 6rem 10%;
+  }
+
+  .heritage_imageTxt {
+    font-size: 11rem;
+    width: 100%;
+    bottom: -5%;
+  }
+
+  .heritage_flexWrapper {
+    margin-top: 4rem;
+  }
+
+  .heritage_history {
+    display: block;
+  }
+
+  .heritage_history_heading {
+    margin-bottom: 1.7rem;
+  }
+
+  .heritage_history p {
+    margin-bottom: 1.2rem;
+    font-size: 1.8rem;
+  }
+}
+
+/* sm 640px*/
+@media (max-width: 40em) {
+  .description_image {
+    height: 100%;
+  }
+
+  .heritage_imageTxt {
+    font-size: 8rem;
+  }
+
+  .heritage_attribute {
+    font-size: 1.5rem;
+  }
+
+  .heritage_attribute p {
+    width: 70%;
+  }
+
+  .heritage_history_heading {
+    font-size: 5rem;
+  }
+
+  .heritage_history p {
+    margin-bottom: 1.4rem;
+    font-size: 1.6rem;
+  }
+
+  .workWithUs_text {
+    max-width: 100rem;
+    margin: 5rem auto;
+    padding-left: 4rem;
+    padding: 2rem;
+  }
+}
+
+/* xs 475px*/
+@media (max-width: 30em) {
+  .description_text {
+    padding: 5% 3rem;
+  }
+
+  .description_text h2 {
+    margin-bottom: 4rem;
+
+    font-size: 2.8rem;
+  }
+
+  .description_text p {
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
+  }
+
+  .heritage_imageTxt {
+    font-size: 5.3rem;
+  }
+
+  .heritage_attribute {
+    font-size: 1.3rem;
+  }
+
+  .heritage_attribute p {
+    width: 80%;
+  }
+
+  .heritage_history_heading {
+    font-size: 4.2rem;
+  }
+
+  .heritage_history p {
+    margin-bottom: 1.4rem;
+    font-size: 1.4rem;
+  }
+
+  .heritage_history_heading::after {
+    top: 2%;
+    left: -10%;
+    font-size: 1.5rem;
+    transform: rotate(-35deg);
+    color: var(--third-color);
+    background-color: var(--primary-color-light);
+    padding: 0 3rem;
+  }
+
+  .workWithUs_text {
+    max-width: 100rem;
+    margin: 5rem auto;
+
+    padding: 2rem;
+  }
+
+  .workWithUs_text_heading {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .workWithUs_text_paragraph {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    margin-bottom: 5rem;
+    width: 50%;
+  }
 }
