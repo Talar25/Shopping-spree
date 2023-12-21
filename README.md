@@ -34,7 +34,8 @@ By doing that project i learnt:
 - How to use API for form validation,
 - How to properly validate forms,
 - How to optimalize images using external libraries,
-- How to properly make RWD.
+- How to properly make RWD,
+- How to use localStorage.
 
 What this project does not have and might in near future:
 

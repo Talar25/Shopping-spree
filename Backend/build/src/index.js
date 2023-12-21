@@ -1,28 +1,55 @@
 "use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 const express_1 = __importDefault(require("express"));
 const productService_1 = __importDefault(require("./services/productService"));
 const utils_1 = __importDefault(require("./utils"));
 const app = (0, express_1.default)();
-const cors = require('cors');
-app.use(cors());
+const cors_1 = __importDefault(require("cors"));
+const dotenv = __importStar(require("dotenv"));
+dotenv.config();
+// eslint-disable-next-line @typescript-eslint/no-unsafe-call
+app.use((0, cors_1.default)());
 app.use(express_1.default.static('dist'));
 app.use(express_1.default.json());
-app.get('/', (_req, res) => {
+app.get('/api/products', (_req, res) => {
     res.send(productService_1.default.getProducts());
 });
-app.get('/:id', (req, res) => {
+app.get('/api/products/:id', (req, res) => {
     const id = req.params.id;
     res.send(productService_1.default.getOneProduct(id));
 });
-app.post('/', (req, res) => {
+app.post('/api/products', (req, res) => {
     try {
         const newProduct = (0, utils_1.default)(req.body);
-        const addedPerson = productService_1.default.addProduct(newProduct);
-        res.json(addedPerson);
+        const addedProduct = productService_1.default.addProduct(newProduct);
+        res.json(addedProduct);
     }
     catch (error) {
         let errorMsg = 'Something went wrong.';
@@ -32,7 +59,7 @@ app.post('/', (req, res) => {
         res.status(400).send(errorMsg);
     }
 });
-const PORT = 3003;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });

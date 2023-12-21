@@ -8,6 +8,9 @@ const uuid_1 = require("uuid");
 const getProducts = () => {
     return products_1.default;
 };
+const getLength = () => {
+    return products_1.default.length;
+};
 const getOneProduct = (id) => {
     const product = products_1.default.find((product) => product.id === id);
     return product;
@@ -21,4 +24,5 @@ exports.default = {
     getOneProduct,
     getProducts,
     addProduct,
+    getLength,
 };
