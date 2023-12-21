@@ -8,16 +8,16 @@ app.use(cors());
 app.use(express.static('dist'));
 app.use(express.json());
 
-app.get('/', (_req, res) => {
+app.get('/api/products', (_req, res) => {
   res.send(productService.getProducts());
 });
 
-app.get('/:id', (req, res) => {
+app.get('/api/products/:id', (req, res) => {
   const id = req.params.id;
   res.send(productService.getOneProduct(id));
 });
 
-app.post('/', (req, res) => {
+app.post('/api/products', (req, res) => {
   try {
     const newProduct = toNewProduct(req.body);
     const addedPerson = productService.addProduct(newProduct);
