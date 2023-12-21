@@ -2,6 +2,10 @@
 
 ## Fully functional shopping site built as a fullstack application with React, Typescript, Node.js and express.
 
+DEMO VERSION :
+*https://shoppingspree.onrender.com/*
+Don't reload while using!!
+
 This project consists of two parts, Frontend and Backend. Backend uses express static site that is made of Frontend Build:
 
 > app.use(express.static('dist'));
